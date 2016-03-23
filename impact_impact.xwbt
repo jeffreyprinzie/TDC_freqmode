@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/jeffrey/projects/work/impact.xsl
+OUTFILE=/home/jeffrey/projects/work/impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=/home/jeffrey/projects/work
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Fri Dec 11 16:30:26 2015
+# Process ID: 19660
+# Log file: /home/jeffrey/projects/work/planAhead_run_4/planAhead.log
+# Journal file: /home/jeffrey/projects/work/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/jeffrey/projects/work/pa.fromNcd.tcl

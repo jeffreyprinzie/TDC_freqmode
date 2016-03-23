@@ -1,0 +1,539 @@
+Release 14.7 ngdbuild P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -sd ipcore_dir -sd source/TDC/ipcore_dir -nt timestamp -uc
+/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf -p
+xc6slx45-csg324-3 top.ngc top.ngd
+
+Reading NGO file "/home/jeffrey/projects/work_freqmode/top.ngc" ...
+Loading design module "ipcore_dir/tri_mode_eth_mac_v5_4.ngc"...
+Loading design module "ipcore_dir/mac_fifo_axi4.ngc"...
+Loading design module "source/TDC/ipcore_dir/hitFIFO.ngc"...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file
+"/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf" ...
+INFO:coreutil - Full license for component <tri_mode_eth_mac> allows you to use
+   this component. This license does not give you access to source code
+   implementing this component.
+
+INFO:coreutil - Full license for component <tri_mode_eth_mac> allows you to use
+   this component. This license does not give you access to source code
+   implementing this component.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+WARNING:ConstraintSystem:119 - Constraint <NET "hit1" CLOCK_DEDICATED_ROUTE =
+   FALSE;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(1
+   55)]: This constraint cannot be distributed from the design objects matching
+   'NET "hit1"' because those design objects do not contain or drive any
+   instances of the correct type.
+
+WARNING:ConstraintSystem:119 - Constraint <NET "hit1" CLOCK_DEDICATED_ROUTE =
+   FALSE;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(1
+   57)]: This constraint cannot be distributed from the design objects matching
+   'NET "hit1"' because those design objects do not contain or drive any
+   instances of the correct type.
+
+WARNING:ConstraintSystem - TNM : GRPinputhit1 was distributed to a DCM but new
+   TNM constraints were not derived. This TNM is used in the following user
+   groups or specifications:
+   <TIMESPEC TS_hit1Divider = FROM "GRPinputhit1" TO "GRPSYSCLK" 4 ns
+   DATAPATHONLY;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(2
+   05)]
+
+WARNING:ConstraintSystem - TNM : GRPhit1 was distributed to a DCM but new TNM
+   constraints were not derived. This TNM is used in the following user groups
+   or specifications:
+   <TIMESPEC TS_Hit1_to_SYSCLK = FROM "GRPhit1" TO "GRPSYSCLK" 1 ns
+   DATAPATHONLY;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(2
+   01)]
+   <TIMESPEC TS_CLK_0_to_Hit1 = FROM "GRPCLK_0" TO "GRPhit1" 1 ns DATAPATHONLY;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(2
+   03)]
+
+INFO:ConstraintSystem:178 - TNM 'tnm_sysclk', used in period specification
+   'TS_hit1', was traced into DCM_CLKGEN instance dcm0. The following new TNM
+   groups and period specifications were generated at the DCM_CLKGEN output(s): 
+   CLKFX: <TIMESPEC TS_clocks_clk_125_i = PERIOD "clocks_clk_125_i" TS_hit1 *
+   1.25 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_sysclk', used in period specification
+   'TS_hit1', was traced into DCM_CLKGEN instance dcm0. The following new TNM
+   groups and period specifications were generated at the DCM_CLKGEN output(s): 
+   CLKFXDV: <TIMESPEC TS_clocks_clk_ipb_i = PERIOD "clocks_clk_ipb_i" TS_hit1 *
+   0.3125 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'gmii_rx_clk', used in period specification
+   'TS_GMII_RX_CLK', was traced into BUFIO2 instance bufio0. The following new
+   TNM groups and period specifications were generated at the BUFIO2 output(s): 
+   IOCLK: <TIMESPEC TS_eth_rx_clk_io = PERIOD "eth_rx_clk_io" TS_GMII_RX_CLK
+   HIGH 50%>
+
+WARNING:NgdBuild:1345 - The constraint <TIMESPEC TS_sysclk = PERIOD "tnm_sysclk"
+   100 MHz;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(7
+   9)] is overridden by the constraint <TIMESPEC TS_hit1 = PERIOD "tnm_sysclk"
+   40 MHz;>
+   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(8
+   0)]. The overriden constraint usually comes from the input netlist or ncf
+   files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message
+   to an error.
+Done...
+
+WARNING:NgdBuild:1212 - User specified non-default attribute value (10.0) was
+   detected for the CLKIN_PERIOD attribute on DCM "dcm0".  This does not match
+   the PERIOD constraint value (40 MHz.).  The uncertainty calculation will use
+   the non-default attribute value.  This could result in incorrect uncertainty
+   calculated for DCM output clocks.
+Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipb_master_in_ipb_err' has no driver
+WARNING:NgdBuild:478 - clock net REFPLL with clock driver
+   slaves/TDCchannels/PLLgen/clkout6_buf drives no clock pins
+WARNING:NgdBuild:452 - logical net 'N4' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<47>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<46>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<45>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<44>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<43>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<42>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<40>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<39>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<38>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<37>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<36>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<33>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans_out_raddr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans_out_raddr<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans_out_raddr<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans_out_waddr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans_out_waddr<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans_out_waddr<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/ipb_req' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/IP_addr<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_addr<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/arp_end_addr<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_addr<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_addr<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_addr<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_addr<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_addr<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_addr<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<12>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<11>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<10>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<9>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<8>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<7>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<4>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<2>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/udp_if/status_end_addr<1>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<95>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<94>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<93>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<92>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<91>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<90>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<89>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<88>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<87>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<86>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<85>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<84>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<83>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<82>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<31>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<30>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<29>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<28>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<27>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<26>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<25>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<24>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<23>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<22>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<21>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<20>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<19>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<18>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<17>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<16>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<15>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<14>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<13>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<12>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<11>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<10>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_in<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<127>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<126>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<125>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<124>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<123>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<122>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<121>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<120>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<119>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<118>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<117>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<116>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<115>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<114>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<113>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<112>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<111>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<110>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<109>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<108>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<107>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<106>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<105>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<104>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<103>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<102>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<101>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<100>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<99>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<98>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<97>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<96>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<95>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<94>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<93>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<92>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<91>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<90>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<89>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<88>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<87>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<86>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<85>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<84>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<83>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<82>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<80>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<79>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<78>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<77>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<76>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<75>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<74>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<73>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<72>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<71>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<70>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<69>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<68>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<67>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<66>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<65>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<64>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<63>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<62>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<61>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<60>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<59>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<58>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<57>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<56>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<55>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<54>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<53>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<52>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<51>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<50>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<49>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<48>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<47>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<46>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<45>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<44>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<43>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<42>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<41>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<40>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<39>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<38>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<37>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<36>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<35>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<34>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<33>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<32>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<31>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<30>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<29>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<28>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<27>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<26>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<25>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<24>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<23>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<22>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<21>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<20>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<19>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<18>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<17>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<16>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<15>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<14>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<13>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<12>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<11>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<10>' has no
+   driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<9>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<8>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<7>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<6>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<5>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<4>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<3>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<2>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<1>' has no driver
+WARNING:NgdBuild:452 - logical net 'ipbus/trans/cfg_vector_out<0>' has no driver
+WARNING:NgdBuild:452 - logical net 'slaves/ipbr[0]_ipb_err' has no driver
+WARNING:NgdBuild:452 - logical net 'slaves/ipbr[1]_ipb_err' has no driver
+WARNING:NgdBuild:452 - logical net 'slaves/ipbr[2]_ipb_err' has no driver
+WARNING:NgdBuild:452 - logical net 'slaves/ipbr[3]_ipb_err' has no driver
+WARNING:NgdBuild:452 - logical net 'slaves/ipbr[4]_ipb_err' has no driver
+WARNING:NgdBuild:478 - clock net slaves/TDCchannels/CLK_45 with clock driver
+   slaves/TDCchannels/PLLgen/clkout2_buf drives no clock pins
+WARNING:NgdBuild:478 - clock net slaves/TDCchannels/CLK_90 with clock driver
+   slaves/TDCchannels/PLLgen/clkout3_buf drives no clock pins
+WARNING:NgdBuild:478 - clock net slaves/TDCchannels/CLK_135 with clock driver
+   slaves/TDCchannels/PLLgen/clkout4_buf drives no clock pins
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings: 301
+
+Total memory usage is 584812 kilobytes
+
+Writing NGD file "top.ngd" ...
+Total REAL time to NGDBUILD completion:  14 sec
+Total CPU time to NGDBUILD completion:   14 sec
+
+Writing NGDBUILD log file "top.bld"...

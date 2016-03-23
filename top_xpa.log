@@ -1,0 +1,22 @@
+Creating log file /home/jeffrey/projects/work_freqmode/top_xpa.log.
+Loading device for application Rf_Device from file '6slx45.nph' in environment
+/opt/Xilinx/14.7/ISE_DS/ISE/.
+   "top" is an NCD, version 3.2, device xc6slx45, package csg324, speed -3
+
+INFO:Power:1693 - 
+   --------------------------------------------------------------
+                         The power estimate will be calculated using PRODUCTION
+   data.
+   --------------------------------------------------------------
+
+Design load 20% completeDesign load 25% completeWARNING:Timing:3159 - The DCM, clocks/dcm0, has the attribute
+   DFS_OSCILLATOR_MODE not set to PHASE_FREQ_LOCK. No phase relationship exists
+   between the input clock and CLKFX or CLKFX180 outputs of this DCM. Data paths
+   between these clock domains must be constrained using FROM/TO constraints.
+Design load 30% completeDesign load 60% completeDesign load 95% completeDesign load 100% completeRunning Vector-less Activity Propagation
+........
+Finished Running Vector-less Activity Propagation
+Finished Running Vector-less Activity Propagation 3 secs 
+
+Design 'top.ncd' and constraints 'top.pcf' opened successfully
+

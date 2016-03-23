@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Fri Dec 11 15:13:09 2015
+# Process ID: 14831
+# Log file: /home/jeffrey/projects/work/planAhead_run_2/planAhead.log
+# Journal file: /home/jeffrey/projects/work/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/jeffrey/projects/work/pa.fromNetlist.tcl
+resize_pblock FSM_TDC1 -add {SLICE_X30Y64:SLICE_X45Y71 RAMB16_X2Y32:RAMB16_X2Y34 RAMB8_X2Y32:RAMB8_X2Y35} -remove {SLICE_X30Y64:SLICE_X45Y71 RAMB16_X2Y32:RAMB16_X2Y34 RAMB8_X2Y32:RAMB8_X2Y35} -locs keep_all
+resize_pblock FSM_TDC1 -from SLICE_X52Y64:SLICE_X59Y71 -to SLICE_X52Y48:SLICE_X59Y55 -from RAMB16_X3Y32:RAMB16_X3Y34 -to RAMB16_X3Y24:RAMB16_X3Y26 -from RAMB8_X3Y32:RAMB8_X3Y35 -to RAMB8_X3Y24:RAMB8_X3Y27 -from SLICE_X30Y64:SLICE_X45Y71 -to SLICE_X30Y48:SLICE_X45Y55 -from RAMB16_X2Y32:RAMB16_X2Y34 -to RAMB16_X2Y24:RAMB16_X2Y26 -from RAMB8_X2Y32:RAMB8_X2Y35 -to RAMB8_X2Y24:RAMB8_X2Y27 -locs keep_all
+resize_pblock L1buffers_ch1 -from SLICE_X48Y64:SLICE_X51Y71 -to SLICE_X48Y48:SLICE_X51Y55 -locs keep_all
+resize_pblock pblock_counter_ch1 -from SLICE_X46Y66:SLICE_X47Y71 -to SLICE_X46Y50:SLICE_X47Y55 -locs keep_all
+startgroup
+unplace_cell  [get_cells [list  slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1 slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2 slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0 SLICE_X47Y48/AFF
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1 SLICE_X47Y48/CFF
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2 SLICE_X47Y49/AFF
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3 SLICE_X47Y49/CFF
+endgroup
+resize_pblock FSM_TDC2 -from SLICE_X52Y80:SLICE_X59Y87 -to SLICE_X52Y56:SLICE_X59Y63 -from RAMB16_X3Y40:RAMB16_X3Y42 -to RAMB16_X3Y28:RAMB16_X3Y30 -from RAMB8_X3Y40:RAMB8_X3Y43 -to RAMB8_X3Y28:RAMB8_X3Y31 -from SLICE_X30Y80:SLICE_X45Y87 -to SLICE_X30Y56:SLICE_X45Y63 -from RAMB16_X2Y40:RAMB16_X2Y42 -to RAMB16_X2Y28:RAMB16_X2Y30 -from RAMB8_X2Y40:RAMB8_X2Y43 -to RAMB8_X2Y28:RAMB8_X2Y31 -locs keep_all
+resize_pblock L1buffers_ch2 -add SLICE_X48Y80:SLICE_X51Y87 -remove SLICE_X48Y80:SLICE_X51Y87 -locs keep_all
+resize_pblock L1buffers_ch2 -from SLICE_X48Y80:SLICE_X51Y87 -to SLICE_X48Y56:SLICE_X51Y63 -locs keep_all
+resize_pblock pblock_counter_ch2 -from SLICE_X46Y82:SLICE_X47Y87 -to SLICE_X46Y58:SLICE_X47Y63 -locs keep_all
+startgroup
+unplace_cell  [get_cells [list  slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_0 SLICE_X47Y77/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 SLICE_X47Y78/CFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 SLICE_X47Y78/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1 SLICE_X47Y77/CFF
+endgroup
+startgroup
+unplace_cell  [get_cells [list  slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_0 SLICE_X47Y56/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 SLICE_X47Y57/CFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 SLICE_X47Y57/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1 SLICE_X47Y56/CFF
+endgroup
+save_constraints

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="gmii_rxd">
+			<Port Id="7" Dir="IN"/>
+			<Port Id="6" Dir="IN"/>
+			<Port Id="5" Dir="IN"/>
+			<Port Id="4" Dir="IN"/>
+			<Port Id="3" Dir="IN"/>
+			<Port Id="2" Dir="IN"/>
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="dip_switch">
+			<Port Id="3" Dir="IN"/>
+			<Port Id="2" Dir="IN"/>
+			<Port Id="1" Dir="IN"/>
+			<Port Id="0" Dir="IN"/>
+		</Bus>
+		<Bus Id="leds">
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="gmii_txd">
+			<Port Id="7" Dir="OUT"/>
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Bus Id="handshakeleds">
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="sysclk" Dir="IN"/>
+		<Port Id="gmii_rx_clk" Dir="IN"/>
+		<Port Id="gmii_rx_dv" Dir="IN"/>
+		<Port Id="gmii_rx_er" Dir="IN"/>
+		<Port Id="ckref_tdc_p" Dir="IN"/>
+		<Port Id="ckref_tdc_n" Dir="IN"/>
+		<Port Id="hit1_P" Dir="IN"/>
+		<Port Id="hit1_N" Dir="IN"/>
+		<Port Id="hit2_P" Dir="IN"/>
+		<Port Id="hit2_N" Dir="IN"/>
+		<Port Id="scli2c" Dir="IN"/>
+		<Port Id="gmii_gtx_clk" Dir="OUT"/>
+		<Port Id="gmii_tx_en" Dir="OUT"/>
+		<Port Id="gmii_tx_er" Dir="OUT"/>
+		<Port Id="phy_rstb" Dir="OUT"/>
+		<Port Id="PLLREF1_P" Dir="OUT"/>
+		<Port Id="PLLREF1_N" Dir="OUT"/>
+		<Port Id="PLLREF2_P" Dir="OUT"/>
+		<Port Id="PLLREF2_N" Dir="OUT"/>
+		<Port Id="sdai2c" Dir="INOUT"/>
+		<Port Id="sda" Dir="OUT"/>
+		<Port Id="sck" Dir="OUT"/>
+		<Port Id="reset" Dir="OUT"/>
+		<Port Id="scapt" Dir="OUT"/>
+		<Port Id="commBusy" Dir="OUT"/>
+		<DiffPair Pos="ckref_tdc_p" Neg="ckref_tdc_n"/>
+		<DiffPair Pos="hit1_P" Neg="hit1_N"/>
+		<DiffPair Pos="hit2_P" Neg="hit2_N"/>
+		<DiffPair Pos="PLLREF1_P" Neg="PLLREF1_N"/>
+		<DiffPair Pos="PLLREF2_P" Neg="PLLREF2_N"/>
+	</Ifc>
+</Interface>
+

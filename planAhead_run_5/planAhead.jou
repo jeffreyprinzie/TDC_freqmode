@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Mar 21 16:53:13 2016
+# Process ID: 23471
+# Log file: /home/jeffrey/projects/work_freqmode/planAhead_run_5/planAhead.log
+# Journal file: /home/jeffrey/projects/work_freqmode/planAhead_run_5/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/jeffrey/projects/work_freqmode/pa.fromNcd.tcl

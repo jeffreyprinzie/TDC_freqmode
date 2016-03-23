@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">eth/fifo/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">ipbus/udp_if/rx_ram_mux/status_end_addr&lt;6&gt;</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2212" delta="old" >Async clocking for BRAM (comp <arg fmt="%s" index="1">slaves/RAM2/Mram_ram</arg>) port(s) with READ_FIRST mode has certain restrictions. Make sure that there is no address collision. A read/write on one port and a write operation from the other port at the same address is not allowed.<arg fmt="%s" index="2"> RAMB16BWER, when both ports are 18 bits wide or smaller, A13-6 including A4 cannot be same. When any one port is 36 bits wide, A13-7 including A5 cannot be the same. </arg>Violating this restriction may result in the incorrect operation of the BRAM.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2212" delta="old" >Async clocking for BRAM (comp <arg fmt="%s" index="1">slaves/RAM1/Mram_ram</arg>) port(s) with READ_FIRST mode has certain restrictions. Make sure that there is no address collision. A read/write on one port and a write operation from the other port at the same address is not allowed.<arg fmt="%s" index="2"> RAMB16BWER, when both ports are 18 bits wide or smaller, A13-6 including A4 cannot be same. When any one port is 36 bits wide, A13-7 including A5 cannot be the same. </arg>Violating this restriction may result in the incorrect operation of the BRAM.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="old" >The signal &lt;<arg fmt="%s" index="1">slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+</messages>
+

@@ -1,0 +1,139 @@
+
+#Created by Constraints Editor (xc6slx45-csg324-3) - 2015/11/11
+
+
+#NET "ckref" LOC = L15;
+
+NET "ckref_P" LOC = U10;
+NET "ckref_N" LOC = V10;
+
+NET "ckref_P" IOSTANDARD = LVDS_33;
+NET "ckref_P" DIFF_TERM = "TRUE";
+NET "ckref_N" DIFF_TERM = "TRUE";
+
+NET "hit_P" LOC = U5;
+NET "hit_N" LOC = V5;
+## PlanAhead Generated IO constraints 
+#
+NET "hit_P" IOSTANDARD = LVDS_33;
+NET "hit_P" DIFF_TERM = "TRUE";
+NET "hit_N" DIFF_TERM = "TRUE";
+
+
+//NET "hit" LOC = "P6";
+NET "TDCfifo_dout[0]" LOC = U18;
+NET "TDCfifo_dout[1]" LOC = M14;
+NET "TDCfifo_dout[2]" LOC = N14;
+NET "TDCfifo_dout[3]" LOC = L14;
+NET "TDCfifo_dout[4]" LOC = M13;
+NET "TDCfifo_dout[5]" LOC = D4;
+NET "TDCfifo_dout[6]" LOC = P16;
+NET "TDCfifo_dout[7]" LOC = N12;
+# PlanAhead Generated IO constraints 
+
+NET "TDCfifo_dout[7]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[6]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[5]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[4]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[3]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[2]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[1]" IOSTANDARD = LVCMOS33;
+NET "TDCfifo_dout[0]" IOSTANDARD = LVCMOS33;
+
+
+#NET "cksel[0]" LOC = A10;
+#NET "cksel[1]" LOC = D14;
+#NET "cksel[2]" LOC = C14;
+
+
+NET "ckref_P" TNM_NET = "ckref";
+TIMESPEC TS_ckref = PERIOD "ckref" 25 ns HIGH 50 %;
+
+PIN "TDCcore/PLLgen/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "TDCcore/PLLgen/clkout2_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "TDCcore/PLLgen/clkout3_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "TDCcore/PLLgen/clkout4_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "hit" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "ckref_p" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "TDCcore/buffer.O" CLOCK_DEDICATED_ROUTE = FALSE;
+
+
+NET "hit" TIG;
+NET "TDCcore/hit_in" TIG;
+
+
+NET "hit" TNM_NET =  FFS "GRPinputhit";
+
+NET "TDCcore/hit" TNM_NET =  FFS "GRPhit";
+NET "TDCcore/SYSCLK" TNM_NET =  FFS "GRPSYSCLK";
+NET "TDCcore/CLK_0" TNM_NET =  FFS "GRPCLK_0";
+
+
+TIMESPEC TS_Hit_to_SYSCLK = FROM "GRPhit" TO "GRPSYSCLK" 1.2 ns DATAPATHONLY;
+TIMESPEC TS_CLK_0_to_Hit = FROM "GRPCLK_0" TO "GRPhit" 1.2 ns DATAPATHONLY;
+TIMESPEC TS_hitDivider = FROM "GRPinputhit" TO "GRPSYSCLK" 4.5 ns DATAPATHONLY;
+#Created by Constraints Editor (xc6slx45-csg324-3) - 2015/11/23
+#NET "TDCcore/CLK_0" MAXDELAY = 1.5 ns;
+#NET "TDCcore/CLK_45" MAXDELAY = 1.5 ns;
+#NET "TDCcore/CLK_90" MAXDELAY = 1.5 ns;
+NET "TDCcore/SYSCLK" MAXSKEW = 0.2 ns;
+NET "TDCcore/hit" MAXSKEW = 0.08 ns;
+
+
+
+INST "TDCcore/hit_registers_L0_0" BEL = AFF;
+INST "TDCcore/hit_registers_L0_0" LOC = SLICE_X47Y64;
+INST "TDCcore/hit_registers_L0_1" BEL = CFF;
+INST "TDCcore/hit_registers_L0_1" LOC = SLICE_X47Y64;
+INST "TDCcore/hit_registers_L0_2" BEL = AFF;
+INST "TDCcore/hit_registers_L0_2" LOC = SLICE_X47Y65;
+INST "TDCcore/hit_registers_L0_3" BEL = CFF;
+INST "TDCcore/hit_registers_L0_3" LOC = SLICE_X47Y65;
+
+
+INST "TDCcore/counter_val_CK180_0" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK180_1" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK180_2" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK0_1" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK0_0" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK0_2" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK0_L0_0" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK0_L0_1" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK0_L0_2" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK180_L0_0" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK180_L0_1" AREA_GROUP = "pblock_counter";
+INST "TDCcore/counter_val_CK180_L0_2" AREA_GROUP = "pblock_counter";
+AREA_GROUP "pblock_counter" RANGE=SLICE_X46Y66:SLICE_X47Y71;
+INST "TDCcore/counter_val_CK0_L1_0" AREA_GROUP = "L1buffers";
+INST "TDCcore/counter_val_CK0_L1_1" AREA_GROUP = "L1buffers";
+INST "TDCcore/counter_val_CK0_L1_2" AREA_GROUP = "L1buffers";
+INST "TDCcore/counter_val_CK180_L1_0" AREA_GROUP = "L1buffers";
+INST "TDCcore/counter_val_CK180_L1_1" AREA_GROUP = "L1buffers";
+INST "TDCcore/counter_val_CK180_L1_2" AREA_GROUP = "L1buffers";
+AREA_GROUP "L1buffers" RANGE=SLICE_X48Y64:SLICE_X51Y71;
+
+
+INST "TDCcore/coarse_time_0_BRB4" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_1" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_0_BRB3" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_0_BRB0" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_0_BRB5" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_2_BRB0" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_2_BRB3" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/coarse_time_2_BRB5" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/fine_time_decoded_0" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/fine_time_decoded_1" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/fine_time_decoded_2" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/FSMstate_FSM_FFd2" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/FSMstate_FSM_FFd1" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/valid_hit" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/hit_registers_L1_3" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/hit_registers_L1_0" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/hit_registers_L1_1" AREA_GROUP = "FSM_TDC1";
+INST "TDCcore/hit_registers_L1_2" AREA_GROUP = "FSM_TDC1";
+AREA_GROUP "FSM_TDC1" RANGE=SLICE_X52Y64:SLICE_X59Y71, SLICE_X30Y64:SLICE_X45Y71;
+AREA_GROUP "FSM_TDC1" RANGE=RAMB16_X2Y32:RAMB16_X3Y34;
+AREA_GROUP "FSM_TDC1" RANGE=RAMB8_X2Y32:RAMB8_X3Y35;
+
+
+

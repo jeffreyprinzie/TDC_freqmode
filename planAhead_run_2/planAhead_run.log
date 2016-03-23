@@ -1,0 +1,406 @@
+
+****** PlanAhead v14.7 (64-bit)
+  **** Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+    ** Copyright 1986-1999, 2001-2013 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/jeffrey/projects/work/pa.fromNetlist.tcl
+# create_project -name demo_atlys -dir "/home/jeffrey/projects/work/planAhead_run_2" -part xc6slx45csg324-3
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "/home/jeffrey/projects/work/top.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/home/jeffrey/projects/work} {ipcore_dir} {source/TDC/ipcore_dir} }
+# add_files [list {ipcore_dir/tri_mode_eth_mac_v5_4.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {ipcore_dir/mac_fifo_axi4.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {source/TDC/ipcore_dir/hitFIFO.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {source/TDC/ipcore_dir/hitRam.ncf}] -fileset [get_property constrset [current_run]]
+# set_property target_constrs_file "/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf" [current_fileset -constrset]
+Adding file '/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf' to fileset 'constrs_1'
+# add_files [list {/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx45csg324-3
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design top.ngc ...
+WARNING:NetListWriters:298 - No output is written to top.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[6]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[6]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[6]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[5]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[5]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[5]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[4]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[4]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[4]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[3]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[3]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[3]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[2]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[2]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[2]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[1]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[1]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[1]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_from_slaves[0]_ipb_rdata has a
+   mismatched property name ipb_from_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_from_slaves[0]_ipb_rdata on block ipbus_fabric using the data
+   ipb_from_slaves[0]_ipb_rdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[6]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[6]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[6]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[6]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[6]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[6]_ipb_wdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[5]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[5]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[5]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[5]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[5]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[5]_ipb_wdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[4]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[4]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[4]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[4]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[4]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[4]_ipb_wdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[3]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[3]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[3]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[3]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[3]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[3]_ipb_wdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[2]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[2]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[2]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[2]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[2]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[2]_ipb_wdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[1]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[1]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[1]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[1]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[1]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[1]_ipb_wdata<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[0]_ipb_addr has a mismatched
+   property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[0]_ipb_addr on block ipbus_fabric using the data
+   ipb_to_slaves[0]_ipb_addr<31:0>.
+WARNING:NetListWriters:305 - Port bus ipb_to_slaves[0]_ipb_wdata has a
+   mismatched property name ipb_to_slaves on block ipbus_fabric.
+WARNING:NetListWriters:303 - Unable to preserve the ordering for port bus
+   ipb_to_slaves[0]_ipb_wdata on block ipbus_fabric using the data
+   ipb_to_slaves[0]_ipb_wdata<31:0>.
+WARNING:NetListWriters:306 - Signal bus Result<15 : 0> on block transactor_if is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus hdr<31 : 4> on block transactor_sm is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus udp_build_data.pay_len[12 : 0] on block
+   udp_tx_mux is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus header[100 : 0] on block
+   udp_status_buffer is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus history_block.event_data[7 : 0] on block
+   udp_status_buffer is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus history_block.async_payload[4 : 0] on
+   block udp_status_buffer is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus async_data[4 : 0] on block
+   udp_status_buffer is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus history[127 : 0] on block
+   udp_status_buffer is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   history_block.async_payload[4]_async_data[4]_mux_20_OUT[4 : 0] on block
+   udp_status_buffer is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus history[127]_history[119]_mux_22_OUT[7 :
+   0] on block udp_status_buffer is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus GND_342_o_GND_342_o_mux_29_OUT[4 : 0] on
+   block udp_status_buffer is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   next_addr.addr_int[6]_GND_341_o_add_20_OUT<3 : 0> on block udp_build_status
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   Madd_next_addr.addr_int[6]_GND_341_o_add_20_OUT_cy<3 : 0> on block
+   udp_build_status is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus next_addr_block.addr_int[12 : 0] on
+   block udp_build_payload is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus rarp.pkt_data[127 : 4] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus ping.pkt_data[19 : 11] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus ipbus_pkt.pkt_data[22 : 0] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus littleendian.reliable_data[31 : 5] on
+   block udp_packet_parser is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus bigendian.unreliable_data[29 : 12] on
+   block udp_packet_parser is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus status_request.pkt_data[46 : 0] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus resend.pkt_data[13 : 1] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus arp.pkt_mask[41]_PWR_54_o_mux_3_OUT[41 :
+   0] on block udp_packet_parser is not reconstructed, because there are some
+   missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   rarp.pkt_data[127]_PWR_54_o_mux_13_OUT[127 : 4] on block udp_packet_parser is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ipbus_pkt.pkt_mask[37]_PWR_54_o_mux_47_OUT[37 : 2] on block udp_packet_parser
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   ipbus_pkt.pkt_data[23]_GND_346_o_mux_49_OUT[23 : 8] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   ipbus_mask.pkt_mask[44]_PWR_54_o_mux_53_OUT[44 : 4] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   bigendian.unreliable_data[31]_GND_346_o_mux_64_OUT[29 : 12] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   status_request.pkt_data[47]_GND_346_o_mux_83_OUT[46 : 20] on block
+   udp_packet_parser is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   resend.pkt_data[15]_GND_346_o_mux_92_OUT[13 : 9] on block udp_packet_parser
+   is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   build_packet.buf_to_load_int[47]_MAC_addr[47]_mux_25_OUT[47 : 4] on block
+   udp_build_arp is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus write_data.shift_buf[47 : 4] on block
+   udp_build_arp is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus build_packet.buf_to_load_int[47 : 4] on
+   block udp_build_arp is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   write_data.shift_buf[47]_write_data.shift_buf[47]_mux_40_OUT[47 : 4] on block
+   udp_build_arp is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus GND_337_o_GND_337_o_select_10_OUT[5 : 3]
+   on block udp_build_arp is not reconstructed, because there are some missing
+   bus signals.
+WARNING:NetListWriters:306 - Signal bus data_block.data_buffer<335 : 44> on
+   block udp_rarp_block is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   data_block.data_buffer[335]_data_block.data_buffer[335]_mux_6_OUT<335 : 40>
+   on block udp_rarp_block is not reconstructed, because there are some missing
+   bus signals.
+  finished :Prep
+Writing EDIF netlist file top.edif ...
+ngc2edif: Total memory usage is 126304 kilobytes
+
+Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/top_ngc_73a685c4.edif]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '10.000000' specified for property 'CLKIN_PERIOD'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7721]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '0,500000' specified for property 'CLKOUT0_DUTY_CYCLE'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7722]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '0,500000' specified for property 'CLKOUT1_DUTY_CYCLE'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7724]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '0,500000' specified for property 'CLKOUT2_DUTY_CYCLE'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7726]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '0,500000' specified for property 'CLKOUT3_DUTY_CYCLE'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7728]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '0,500000' specified for property 'CLKOUT4_DUTY_CYCLE'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7730]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '0,500000' specified for property 'CLKOUT5_DUTY_CYCLE'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:7732]
+CRITICAL WARNING: [Netlist 29-73] Incorrect value '10.0' specified for property 'CLKIN_PERIOD'. The system will either use the default value or the property value will be dropped. Verify your source files. [/home/jeffrey/projects/work/top.ngc:168303]
+Finished Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/top_ngc_73a685c4.edif]
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design tri_mode_eth_mac_v5_4.ngc ...
+WARNING:NetListWriters:298 - No output is written to tri_mode_eth_mac_v5_4.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   U0/trimac_top/TRI_SPEED.TRIMAC_INST/TXGEN/TX_SM1/GND_36_o_GND_36_o_sub_12_OUT
+   [7 : 2] on block tri_mode_eth_mac_v5_4 is not reconstructed, because there
+   are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   U0/trimac_top/TRI_SPEED.TRIMAC_INST/TXGEN/TX_SM1/DATA_REG[0][7]_GND_36_o_mux_
+   59_OUT[5 : 1] on block tri_mode_eth_mac_v5_4 is not reconstructed, because
+   there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   U0/trimac_top/TRI_SPEED.TRIMAC_INST/TXGEN/TX_SM1/PREAMBLE_PIPE[13 : 0] on
+   block tri_mode_eth_mac_v5_4 is not reconstructed, because there are some
+   missing bus signals.
+  finished :Prep
+Writing EDIF netlist file tri_mode_eth_mac_v5_4.edif ...
+ngc2edif: Total memory usage is 107588 kilobytes
+
+Reading core file '/home/jeffrey/projects/work/ipcore_dir/tri_mode_eth_mac_v5_4.ngc' for (cell view 'tri_mode_eth_mac_v5_4', library 'top_lib', file 'top.ngc')
+Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/tri_mode_eth_mac_v5_4_ngc_46669447.edif]
+Finished Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/tri_mode_eth_mac_v5_4_ngc_46669447.edif]
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design mac_fifo_axi4.ngc ...
+WARNING:NetListWriters:298 - No output is written to mac_fifo_axi4.xncf,
+   ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+  finished :Prep
+Writing EDIF netlist file mac_fifo_axi4.edif ...
+ngc2edif: Total memory usage is 103400 kilobytes
+
+Reading core file '/home/jeffrey/projects/work/ipcore_dir/mac_fifo_axi4.ngc' for (cell view 'mac_fifo_axi4', library 'top_lib', file 'top.ngc')
+Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/mac_fifo_axi4_ngc_46669447.edif]
+Finished Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/mac_fifo_axi4_ngc_46669447.edif]
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design hitFIFO.ngc ...
+WARNING:NetListWriters:298 - No output is written to hitFIFO.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg<2 :
+   0> on block hitFIFO is not reconstructed, because there are some missing bus
+   signals.
+  finished :Prep
+Writing EDIF netlist file hitFIFO.edif ...
+ngc2edif: Total memory usage is 103128 kilobytes
+
+Reading core file '/home/jeffrey/projects/work/source/TDC/ipcore_dir/hitFIFO.ngc' for (cell view 'hitFIFO', library 'top_lib', file 'top.ngc')
+Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/hitFIFO_ngc_88ad68b3.edif]
+Finished Parsing EDIF File [./planAhead_run_2/demo_atlys.data/cache/hitFIFO_ngc_88ad68b3.edif]
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx45/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx45/ClockBuffers.xml
+Loading package pin functions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx45/csg324/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [/home/jeffrey/projects/work/ipcore_dir/tri_mode_eth_mac_v5_4.ncf]
+Finished Parsing UCF File [/home/jeffrey/projects/work/ipcore_dir/tri_mode_eth_mac_v5_4.ncf]
+Parsing UCF File [/home/jeffrey/projects/work/ipcore_dir/mac_fifo_axi4.ncf]
+Finished Parsing UCF File [/home/jeffrey/projects/work/ipcore_dir/mac_fifo_axi4.ncf]
+Parsing UCF File [/home/jeffrey/projects/work/source/TDC/ipcore_dir/hitFIFO.ncf]
+Finished Parsing UCF File [/home/jeffrey/projects/work/source/TDC/ipcore_dir/hitFIFO.ncf]
+Parsing UCF File [/home/jeffrey/projects/work/source/TDC/ipcore_dir/hitFIFO.ncf]
+Finished Parsing UCF File [/home/jeffrey/projects/work/source/TDC/ipcore_dir/hitFIFO.ncf]
+Parsing UCF File [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf]
+CRITICAL WARNING: [Constraints 18-47] TIMESPEC TS_Hit_to_SYSCLK is redefined. The earlier version defined at (file = atlys.ucf, line = 200) will be discarded [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf:201]
+CRITICAL WARNING: [Constraints 18-47] TIMESPEC TS_CLK_0_to_Hit is redefined. The earlier version defined at (file = atlys.ucf, line = 202) will be discarded [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf:203]
+CRITICAL WARNING: [Constraints 18-47] TIMESPEC TS_hitDivider is redefined. The earlier version defined at (file = atlys.ucf, line = 204) will be discarded [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf:205]
+Finished Parsing UCF File [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 22 instances were transformed.
+  IOBUF => IOBUF (OBUFT, IBUF): 1 instances
+  RAM16X1D => RAM16X1D (RAMD32, RAMD32, GND): 4 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 1 instances
+  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 4 instances
+  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 12 instances
+
+Phase 0 | Netlist Checksum: b848d165
+link_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:27 . Memory (MB): peak = 2834.230 ; gain = 177.441
+resize_pblock FSM_TDC1 -add {SLICE_X30Y64:SLICE_X45Y71 RAMB16_X2Y32:RAMB16_X2Y34 RAMB8_X2Y32:RAMB8_X2Y35} -remove {SLICE_X30Y64:SLICE_X45Y71 RAMB16_X2Y32:RAMB16_X2Y34 RAMB8_X2Y32:RAMB8_X2Y35} -locs keep_all
+resize_pblock FSM_TDC1 -from SLICE_X52Y64:SLICE_X59Y71 -to SLICE_X52Y48:SLICE_X59Y55 -from RAMB16_X3Y32:RAMB16_X3Y34 -to RAMB16_X3Y24:RAMB16_X3Y26 -from RAMB8_X3Y32:RAMB8_X3Y35 -to RAMB8_X3Y24:RAMB8_X3Y27 -from SLICE_X30Y64:SLICE_X45Y71 -to SLICE_X30Y48:SLICE_X45Y55 -from RAMB16_X2Y32:RAMB16_X2Y34 -to RAMB16_X2Y24:RAMB16_X2Y26 -from RAMB8_X2Y32:RAMB8_X2Y35 -to RAMB8_X2Y24:RAMB8_X2Y27 -locs keep_all
+resize_pblock L1buffers_ch1 -from SLICE_X48Y64:SLICE_X51Y71 -to SLICE_X48Y48:SLICE_X51Y55 -locs keep_all
+resize_pblock pblock_counter_ch1 -from SLICE_X46Y66:SLICE_X47Y71 -to SLICE_X46Y50:SLICE_X47Y55 -locs keep_all
+startgroup
+unplace_cell  [get_cells [list  slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1 slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2 slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0 SLICE_X47Y48/AFF
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1 SLICE_X47Y48/CFF
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2 SLICE_X47Y49/AFF
+place_cell slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3 SLICE_X47Y49/CFF
+endgroup
+resize_pblock FSM_TDC2 -from SLICE_X52Y80:SLICE_X59Y87 -to SLICE_X52Y56:SLICE_X59Y63 -from RAMB16_X3Y40:RAMB16_X3Y42 -to RAMB16_X3Y28:RAMB16_X3Y30 -from RAMB8_X3Y40:RAMB8_X3Y43 -to RAMB8_X3Y28:RAMB8_X3Y31 -from SLICE_X30Y80:SLICE_X45Y87 -to SLICE_X30Y56:SLICE_X45Y63 -from RAMB16_X2Y40:RAMB16_X2Y42 -to RAMB16_X2Y28:RAMB16_X2Y30 -from RAMB8_X2Y40:RAMB8_X2Y43 -to RAMB8_X2Y28:RAMB8_X2Y31 -locs keep_all
+resize_pblock L1buffers_ch2 -add SLICE_X48Y80:SLICE_X51Y87 -remove SLICE_X48Y80:SLICE_X51Y87 -locs keep_all
+resize_pblock L1buffers_ch2 -from SLICE_X48Y80:SLICE_X51Y87 -to SLICE_X48Y56:SLICE_X51Y63 -locs keep_all
+resize_pblock pblock_counter_ch2 -from SLICE_X46Y82:SLICE_X47Y87 -to SLICE_X46Y58:SLICE_X47Y63 -locs keep_all
+startgroup
+unplace_cell  [get_cells [list  slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_0 SLICE_X47Y77/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 SLICE_X47Y78/CFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 SLICE_X47Y78/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1 SLICE_X47Y77/CFF
+endgroup
+startgroup
+unplace_cell  [get_cells [list  slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_0 SLICE_X47Y56/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3 SLICE_X47Y57/CFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2 SLICE_X47Y57/AFF
+place_cell slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1 SLICE_X47Y56/CFF
+endgroup
+save_constraints
+exit
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Fri Dec 11 15:17:29 2015...
+INFO: [Common 17-83] Releasing license: PlanAhead
