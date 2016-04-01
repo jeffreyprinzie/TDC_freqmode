@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/home/jeffrey/projects/work_freqmode/top.ncd
-OUTFILE=/home/jeffrey/projects/work_freqmode/top.bit
+INFILE=/home/Administrators/jeffrey/xilinx/work_freqmode/top.ncd
+OUTFILE=/home/Administrators/jeffrey/xilinx/work_freqmode/top.bit
 FAMILY=Spartan6
 PART=xc6slx45-3csg324
-WORKINGDIR=/home/jeffrey/projects/work_freqmode
+WORKINGDIR=/home/Administrators/jeffrey/xilinx/work_freqmode
 LICENSE=WebPack
 USER_INFO=__0_0_0

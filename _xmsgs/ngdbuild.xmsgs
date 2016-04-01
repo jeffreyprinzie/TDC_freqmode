@@ -13,19 +13,19 @@
 </arg>
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="119" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(156)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
+<msg type="warning" file="ConstraintSystem" num="119" delta="new" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [atlys.ucf(156)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="119" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(158)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
+<msg type="warning" file="ConstraintSystem" num="119" delta="new" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [atlys.ucf(158)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
 </msg>
 
 <msg type="warning" file="ConstraintSystem" num="0" >TNM : GRPinputhit1 was distributed to a DCM but new TNM constraints were not derived. This TNM is used in the following user groups or specifications:
-&lt;TIMESPEC TS_hit1Divider = FROM &quot;GRPinputhit1&quot; TO &quot;GRPSYSCLK&quot; 4 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(206)]
+&lt;TIMESPEC TS_hit1Divider = FROM &quot;GRPinputhit1&quot; TO &quot;GRPSYSCLK&quot; 4 ns DATAPATHONLY;&gt; [atlys.ucf(206)]
 </msg>
 
 <msg type="warning" file="ConstraintSystem" num="0" >TNM : GRPhit1 was distributed to a DCM but new TNM constraints were not derived. This TNM is used in the following user groups or specifications:
-&lt;TIMESPEC TS_Hit1_to_SYSCLK = FROM &quot;GRPhit1&quot; TO &quot;GRPSYSCLK&quot; 1 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(202)]
-&lt;TIMESPEC TS_CLK_0_to_Hit1 = FROM &quot;GRPCLK_0&quot; TO &quot;GRPhit1&quot; 1 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(204)]
+&lt;TIMESPEC TS_Hit1_to_SYSCLK = FROM &quot;GRPhit1&quot; TO &quot;GRPSYSCLK&quot; 1 ns DATAPATHONLY;&gt; [atlys.ucf(202)]
+&lt;TIMESPEC TS_CLK_0_to_Hit1 = FROM &quot;GRPCLK_0&quot; TO &quot;GRPhit1&quot; 1 ns DATAPATHONLY;&gt; [atlys.ucf(204)]
 </msg>
 
 <msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_sysclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_sysclk</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_CLKGEN</arg> instance <arg fmt="%s" index="5">dcm0</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_CLKGEN</arg> output(s): 
@@ -44,7 +44,7 @@
 <arg fmt="%s" index="7">CLKOUT1</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout1 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout1&quot; TS_hit1 * 8 PHASE 0.390625 ns HIGH 50%&gt;</arg>
 </msg>
 
-<msg type="info" file="ConstraintSystem" num="178" delta="new" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
 <arg fmt="%s" index="7">CLKOUT5</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout5 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout5&quot; TS_hit1 HIGH 50%&gt;</arg>
 </msg>
 
