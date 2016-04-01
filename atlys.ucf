@@ -1,0 +1,339 @@
+NET "sysclk" TNM_NET = "tnm_sysclk";
+NET "sysclk" LOC = L15;
+NET "sysclk" IOSTANDARD = LVCMOS33;
+
+NET "scapt" LOC = U11;
+NET "reset" LOC = V11;
+NET "sck" LOC = N10;
+NET "sda" LOC = P11;
+NET "sdai2c" LOC = M11;
+NET "scli2c" LOC = N11;
+NET "commBusy" LOC = N12;
+NET "TRIGGER" LOC = U13;
+
+NET "scapt" IOSTANDARD = LVCMOS33;
+NET "reset" IOSTANDARD = LVCMOS33;
+NET "sck" IOSTANDARD = LVCMOS33;
+NET "sda" IOSTANDARD = LVCMOS33;
+NET "sdai2c" IOSTANDARD = LVCMOS33;
+NET "scli2c" IOSTANDARD = LVCMOS33;
+NET "commBusy" IOSTANDARD = LVCMOS33;
+NET "TRIGGER" IOSTANDARD = LVCMOS33;
+
+
+NET "handshakeleds[2]" IOSTANDARD = LVCMOS33;
+NET "handshakeleds[1]" IOSTANDARD = LVCMOS33;
+NET "handshakeleds[0]" IOSTANDARD = LVCMOS33;
+NET "handshakeleds[0]" LOC = M13;
+NET "handshakeleds[1]" LOC = D4;
+NET "handshakeleds[2]" LOC = P16;
+
+
+NET "leds[0]" LOC = U18;
+NET "leds[0]" IOSTANDARD = LVCMOS33;
+NET "leds[1]" LOC = M14;
+NET "leds[1]" IOSTANDARD = LVCMOS33;
+NET "leds[2]" LOC = N14;
+NET "leds[2]" IOSTANDARD = LVCMOS33;
+NET "leds[3]" LOC = L14;
+NET "leds[3]" IOSTANDARD = LVCMOS33;
+
+NET "dip_switch[0]" LOC = A10;
+NET "dip_switch[0]" IOSTANDARD = LVCMOS33;
+NET "dip_switch[1]" LOC = D14;
+NET "dip_switch[1]" IOSTANDARD = LVCMOS33;
+NET "dip_switch[2]" LOC = C14;
+NET "dip_switch[2]" IOSTANDARD = LVCMOS33;
+NET "dip_switch[3]" LOC = P15;
+NET "dip_switch[3]" IOSTANDARD = LVCMOS33;
+
+NET "hit1_P" IOSTANDARD = LVDS_33;
+NET "hit1_P" LOC = U8;
+NET "hit1_N" LOC = V8;
+NET "hit1_P" DIFF_TERM = "TRUE";
+NET "hit1_N" DIFF_TERM = "TRUE";
+
+#NET "hit2_P" IOSTANDARD = LVDS_33;
+#NET "hit2_P" LOC = N7;
+#NET "hit2_N" LOC = P8;
+#NET "hit2_P" DIFF_TERM = "TRUE";
+#NET "hit2_N" DIFF_TERM = "TRUE";
+
+NET "ckref_tdc_p" LOC = U10;
+NET "ckref_tdc_n" LOC = V10;
+NET "ckref_tdc_p" IOSTANDARD = LVDS_33;
+NET "ckref_tdc_p" DIFF_TERM = "TRUE";
+NET "ckref_tdc_n" DIFF_TERM = "TRUE";
+
+
+NET "PLLREF1_P" LOC = U5;
+NET "PLLREF1_N" LOC = V5;
+NET "PLLREF1_P" IOSTANDARD = LVDS_33;
+NET "PLLREF2_P" LOC = R7;
+NET "PLLREF2_N" LOC = T7;
+NET "PLLREF2_P" IOSTANDARD = LVDS_33;
+
+
+
+
+NET "hit1" TNM_NET = "tnm_hit1";
+TIMESPEC TS_sysclk = PERIOD "tnm_sysclk" 100 MHz;
+TIMESPEC TS_hit1 = PERIOD "tnm_hit1" 40 MHz;
+
+NET "ipb_clk" TNM_NET = "tnm_ipb_clk";
+NET "clk125" TNM_NET = "tnm_clk125";
+TIMESPEC TS_tig_ipb_125 = FROM "tnm_ipb_clk" TO "tnm_clk125" TIG ;
+TIMESPEC TS_tig_125_ipb = FROM "tnm_clk125" TO "tnm_ipb_clk" TIG ;
+
+NET "clocks/rst" TIG;
+NET "clocks/nuke_i" TIG;
+
+
+
+TIMEGRP TG_gmii_tx =   PADS("gmii_tx*");
+TIMEGRP "TG_gmii_tx" OFFSET = OUT  AFTER "sysclk" REFERENCE_PIN "gmii_gtx_clk" RISING;
+
+NET "gmii_gtx_clk" LOC = L12;
+NET "gmii_gtx_clk" IOSTANDARD = LVCMOS33;
+NET "gmii_gtx_clk" SLEW = FAST;
+NET "gmii_txd[0]" LOC = H16;
+NET "gmii_txd[0]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[1]" LOC = H13;
+NET "gmii_txd[1]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[2]" LOC = K14;
+NET "gmii_txd[2]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[3]" LOC = K13;
+NET "gmii_txd[3]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[4]" LOC = J13;
+NET "gmii_txd[4]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[5]" LOC = G14;
+NET "gmii_txd[5]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[6]" LOC = H12;
+NET "gmii_txd[6]" IOSTANDARD = LVCMOS33;
+NET "gmii_txd[7]" LOC = K12;
+NET "gmii_txd[7]" IOSTANDARD = LVCMOS33;
+NET "gmii_tx_en" LOC = H15;
+NET "gmii_tx_en" IOSTANDARD = LVCMOS33;
+NET "gmii_tx_er" LOC = G18;
+NET "gmii_tx_er" IOSTANDARD = LVCMOS33;
+
+NET "gmii_rx_clk" TNM_NET = "gmii_rx_clk";
+NET "gmii_rx_clk" LOC = K15;
+NET "gmii_rx_clk" IOSTANDARD = LVCMOS33;
+TIMESPEC TS_GMII_RX_CLK = PERIOD "gmii_rx_clk" 125 MHz;
+OFFSET = IN 2 ns VALID 3 ns BEFORE "gmii_rx_clk";
+
+NET "gmii_rxd[0]" LOC = G16;
+NET "gmii_rxd[0]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[1]" LOC = H14;
+NET "gmii_rxd[1]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[2]" LOC = E16;
+NET "gmii_rxd[2]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[3]" LOC = F15;
+NET "gmii_rxd[3]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[4]" LOC = F14;
+NET "gmii_rxd[4]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[5]" LOC = E18;
+NET "gmii_rxd[5]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[6]" LOC = D18;
+NET "gmii_rxd[6]" IOSTANDARD = LVCMOS33;
+NET "gmii_rxd[7]" LOC = D17;
+NET "gmii_rxd[7]" IOSTANDARD = LVCMOS33;
+NET "gmii_rx_dv" LOC = F17;
+NET "gmii_rx_dv" IOSTANDARD = LVCMOS33;
+NET "gmii_rx_er" LOC = F18;
+NET "gmii_rx_er" IOSTANDARD = LVCMOS33;
+
+INST "eth/*iodelay*" IDELAY_VALUE = 10;
+
+NET "phy_rstb" LOC = G13;
+NET "phy_rstb" IOSTANDARD = LVCMOS33;
+
+
+
+//NET "hitbtn" LOC = F5;
+//NET "hitbtn" CLOCK_DEDICATED_ROUTE = FALSE; 
+NET "hit1" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "hit1_P" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "hit1" CLOCK_DEDICATED_ROUTE = FALSE;
+
+#NET "hit2" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "hit2_P" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "slaves/TDCchannels/dc2/TDCcore/hit" CLOCK_DEDICATED_ROUTE = FALSE;
+
+
+
+
+
+#NET "ckref_tdc_p" TIG;
+#NET "ckref_tdc_p" TNM_NET = "ckref_tdc_p";
+#TIMESPEC TS_ckref_tdc_p = PERIOD "ckref_tdc_p" 25 ns HIGH 50 %;
+
+PIN "slaves/TDCchannels/PLLgen/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "slaves/TDCchannels/PLLgen/clkout2_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "slaves/TDCchannels/PLLgen/clkout3_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "slaves/TDCchannels/PLLgen/clkout4_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "slaves/TDCchannels/PLLgen/clkout6_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "hit" CLOCK_DEDICATED_ROUTE = FALSE;
+#NET "ckref_p" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "Gbuffer_hit1.O" CLOCK_DEDICATED_ROUTE = FALSE;
+#PIN "slaves/TDCchannels/dc2/TDCcore/buffer.O" CLOCK_DEDICATED_ROUTE = FALSE;
+
+#PIN "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2.D" CLOCK_DEDICATED_ROUTE = FALSE;
+
+#NET "hit1" TIG;
+NET "slaves/TDCchannels/dc1/TDCcore/hit_in" TIG;
+
+#NET "hit2" TIG;
+#NET "slaves/TDCchannels/dc2/TDCcore/hit_in" TIG;
+
+
+NET "hit1" TNM_NET =  FFS "GRPinputhit1";
+#NET "hit2" TNM_NET =  FFS "GRPinputhit2";
+
+NET "hit1" TNM_NET =  FFS "GRPhit1";
+#NET "slaves/TDCchannels/dc2/TDCcore/hit" TNM_NET =  FFS "GRPhit2";
+NET "slaves/TDCchannels/SYSCLK" TNM_NET =  FFS "GRPSYSCLK";
+NET "slaves/TDCchannels/CLK_0" TNM_NET =  FFS "GRPCLK_0";
+NET "ipb_clk" TNM_NET =  FFS "GRPIPBCLK";
+
+
+
+TIMESPEC TS_Hit1_to_SYSCLK = FROM "GRPhit1" TO "GRPSYSCLK" 1 ns DATAPATHONLY;
+#TIMESPEC TS_Hit2_to_SYSCLK = FROM "GRPhit2" TO "GRPSYSCLK" 1 ns DATAPATHONLY;
+TIMESPEC TS_CLK_0_to_Hit1 = FROM "GRPCLK_0" TO "GRPhit1" 1 ns DATAPATHONLY;
+#TIMESPEC TS_CLK_0_to_Hit2 = FROM "GRPCLK_0" TO "GRPhit2" 1 ns DATAPATHONLY;
+TIMESPEC TS_hit1Divider = FROM "GRPinputhit1" TO "GRPSYSCLK" 4 ns DATAPATHONLY;
+#TIMESPEC TS_hit2Divider = FROM "GRPinputhit2" TO "GRPSYSCLK" 4 ns DATAPATHONLY;
+
+TIMESPEC TS_SYSCLK_to_IPBCLK = FROM "GRPSYSCLK" TO "GRPIPBCLK" 2 ns DATAPATHONLY;
+TIMESPEC TS_IPBCLK_to_SYSCLK = FROM "GRPIPBCLK" TO "GRPSYSCLK" 2 ns DATAPATHONLY;
+#Created by Constraints Editor (xc6slx45-csg324-3) - 2015/11/23
+#NET "slaves/TDCchannels/dc1/TDCcore/CLK_0" MAXDELAY = 1.5 ns;
+#NET "slaves/TDCchannels/dc1/TDCcore/CLK_45" MAXDELAY = 1.5 ns;
+#NET "slaves/TDCchannels/dc1/TDCcore/CLK_90" MAXDELAY = 1.5 ns;
+NET "slaves/TDCchannels/SYSCLK" MAXSKEW = 0 ns;
+NET "hit1" MAXSKEW = 0 ns;
+#NET "slaves/TDCchannels/dc2/TDCcore/hit" MAXSKEW = 0 ns;
+
+
+
+
+
+
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_0" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_1" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_2" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_1" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_0" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_2" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0_0" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0_1" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0_2" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0_0" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0_1" AREA_GROUP = "pblock_counter_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0_2" AREA_GROUP = "pblock_counter_ch1";
+AREA_GROUP "pblock_counter_ch1" RANGE=SLICE_X46Y50:SLICE_X47Y55;
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L1_0" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L1_1" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L1_2" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1_0" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1_1" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1_2" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_1" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_0" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_3" AREA_GROUP = "L1buffers_ch1";
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_2" AREA_GROUP = "L1buffers_ch1";
+AREA_GROUP "L1buffers_ch1" RANGE=SLICE_X48Y48:SLICE_X51Y55;
+
+
+INST "slaves/TDCchannels/dc1/TDCcore/valid_hit" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/coarse_time_2" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/coarse_time_1" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/coarse_time_0" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded_2" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded_1" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded_0" AREA_GROUP = "FSM_TDC1";
+#INST "slaves/TDCchannels/dc1/TDCcore/hit_syn" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd1" AREA_GROUP = "FSM_TDC1";
+INST "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd2" AREA_GROUP = "FSM_TDC1";
+AREA_GROUP "FSM_TDC1" RANGE=SLICE_X52Y48:SLICE_X59Y55, SLICE_X30Y48:SLICE_X45Y55;
+AREA_GROUP "FSM_TDC1" RANGE=RAMB16_X2Y24:RAMB16_X3Y26;
+AREA_GROUP "FSM_TDC1" RANGE=RAMB8_X2Y24:RAMB8_X3Y27;
+
+
+
+
+
+
+
+
+
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_0" BEL = AFF;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_0" LOC = SLICE_X47Y56;
+#
+#
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_0" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_1" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_2" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_1" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_0" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_2" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_L0_0" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_L0_1" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_L0_2" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_L0_0" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_L0_1" AREA_GROUP = "pblock_counter_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_L0_2" AREA_GROUP = "pblock_counter_ch2";
+#AREA_GROUP "pblock_counter_ch2" RANGE=SLICE_X46Y58:SLICE_X47Y63;
+
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_L1_0" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_L1_1" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK0_L1_2" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_L1_0" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_L1_1" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/counter_val_CK180_L1_2" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L1_1" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L1_0" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L1_3" AREA_GROUP = "L1buffers_ch2";
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L1_2" AREA_GROUP = "L1buffers_ch2";
+#AREA_GROUP "L1buffers_ch2" RANGE=SLICE_X48Y56:SLICE_X51Y63;
+#
+#
+#
+#INST "slaves/TDCchannels/dc2/TDCcore/valid_hit" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/coarse_time_2" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/coarse_time_1" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/coarse_time_0" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/fine_time_decoded_2" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/fine_time_decoded_1" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/fine_time_decoded_0" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_syn" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/FSMstate_FSM_FFd1" AREA_GROUP = "FSM_TDC2";
+#INST "slaves/TDCchannels/dc2/TDCcore/FSMstate_FSM_FFd2" AREA_GROUP = "FSM_TDC2";
+#AREA_GROUP "FSM_TDC2" RANGE=SLICE_X52Y56:SLICE_X59Y63, SLICE_X30Y56:SLICE_X45Y63;
+#AREA_GROUP "FSM_TDC2" RANGE=RAMB16_X2Y28:RAMB16_X3Y30;
+#AREA_GROUP "FSM_TDC2" RANGE=RAMB8_X2Y28:RAMB8_X3Y31;
+
+INST "eth/bufg0" LOC = BUFGMUX_X2Y3;
+
+
+
+#PIN "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2.D" CLOCK_DEDICATED_ROUTE = FALSE;
+
+
+# PlanAhead Generated physical constraints 
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0" BEL = AFF;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0" LOC = SLICE_X47Y48;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1" BEL = CFF;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1" LOC = SLICE_X47Y48;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2" BEL = AFF;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2" LOC = SLICE_X47Y49;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3" BEL = CFF;
+INST "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3" LOC = SLICE_X47Y49;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3" BEL = CFF;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_3" LOC = SLICE_X47Y57;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2" BEL = AFF;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_2" LOC = SLICE_X47Y57;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1" BEL = CFF;
+#INST "slaves/TDCchannels/dc2/TDCcore/hit_registers_L0_1" LOC = SLICE_X47Y56;
