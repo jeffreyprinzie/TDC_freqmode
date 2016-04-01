@@ -28,14 +28,14 @@ Checking Constraint Associations...
 WARNING:ConstraintSystem:119 - Constraint <NET "hit1" CLOCK_DEDICATED_ROUTE =
    FALSE;>
    [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(1
-   55)]: This constraint cannot be distributed from the design objects matching
+   56)]: This constraint cannot be distributed from the design objects matching
    'NET "hit1"' because those design objects do not contain or drive any
    instances of the correct type.
 
 WARNING:ConstraintSystem:119 - Constraint <NET "hit1" CLOCK_DEDICATED_ROUTE =
    FALSE;>
    [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(1
-   57)]: This constraint cannot be distributed from the design objects matching
+   58)]: This constraint cannot be distributed from the design objects matching
    'NET "hit1"' because those design objects do not contain or drive any
    instances of the correct type.
 
@@ -45,7 +45,7 @@ WARNING:ConstraintSystem - TNM : GRPinputhit1 was distributed to a DCM but new
    <TIMESPEC TS_hit1Divider = FROM "GRPinputhit1" TO "GRPSYSCLK" 4 ns
    DATAPATHONLY;>
    [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(2
-   05)]
+   06)]
 
 WARNING:ConstraintSystem - TNM : GRPhit1 was distributed to a DCM but new TNM
    constraints were not derived. This TNM is used in the following user groups
@@ -53,22 +53,58 @@ WARNING:ConstraintSystem - TNM : GRPhit1 was distributed to a DCM but new TNM
    <TIMESPEC TS_Hit1_to_SYSCLK = FROM "GRPhit1" TO "GRPSYSCLK" 1 ns
    DATAPATHONLY;>
    [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(2
-   01)]
+   02)]
    <TIMESPEC TS_CLK_0_to_Hit1 = FROM "GRPCLK_0" TO "GRPhit1" 1 ns DATAPATHONLY;>
    [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(2
-   03)]
+   04)]
 
 INFO:ConstraintSystem:178 - TNM 'tnm_sysclk', used in period specification
-   'TS_hit1', was traced into DCM_CLKGEN instance dcm0. The following new TNM
+   'TS_sysclk', was traced into DCM_CLKGEN instance dcm0. The following new TNM
    groups and period specifications were generated at the DCM_CLKGEN output(s): 
-   CLKFX: <TIMESPEC TS_clocks_clk_125_i = PERIOD "clocks_clk_125_i" TS_hit1 *
+   CLKFX: <TIMESPEC TS_clocks_clk_125_i = PERIOD "clocks_clk_125_i" TS_sysclk *
    1.25 HIGH 50%>
 
 INFO:ConstraintSystem:178 - TNM 'tnm_sysclk', used in period specification
-   'TS_hit1', was traced into DCM_CLKGEN instance dcm0. The following new TNM
+   'TS_sysclk', was traced into DCM_CLKGEN instance dcm0. The following new TNM
    groups and period specifications were generated at the DCM_CLKGEN output(s): 
-   CLKFXDV: <TIMESPEC TS_clocks_clk_ipb_i = PERIOD "clocks_clk_ipb_i" TS_hit1 *
-   0.3125 HIGH 50%>
+   CLKFXDV: <TIMESPEC TS_clocks_clk_ipb_i = PERIOD "clocks_clk_ipb_i" TS_sysclk
+   * 0.3125 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_hit1', used in period specification
+   'TS_hit1', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT3: <TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout3 = PERIOD
+   "slaves_TDCchannels_PLLgen_clkout3" TS_hit1 * 8 PHASE 1.171875 ns HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_hit1', used in period specification
+   'TS_hit1', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT1: <TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout1 = PERIOD
+   "slaves_TDCchannels_PLLgen_clkout1" TS_hit1 * 8 PHASE 0.390625 ns HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_hit1', used in period specification
+   'TS_hit1', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT5: <TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout5 = PERIOD
+   "slaves_TDCchannels_PLLgen_clkout5" TS_hit1 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_hit1', used in period specification
+   'TS_hit1', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout0 = PERIOD
+   "slaves_TDCchannels_PLLgen_clkout0" TS_hit1 * 8 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_hit1', used in period specification
+   'TS_hit1', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT4: <TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout4 = PERIOD
+   "slaves_TDCchannels_PLLgen_clkout4" TS_hit1 * 4.8 HIGH 50%>
+
+INFO:ConstraintSystem:178 - TNM 'tnm_hit1', used in period specification
+   'TS_hit1', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT2: <TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout2 = PERIOD
+   "slaves_TDCchannels_PLLgen_clkout2" TS_hit1 * 8 PHASE 0.78125 ns HIGH 50%>
 
 INFO:ConstraintSystem:178 - TNM 'gmii_rx_clk', used in period specification
    'TS_GMII_RX_CLK', was traced into BUFIO2 instance bufio0. The following new
@@ -76,22 +112,8 @@ INFO:ConstraintSystem:178 - TNM 'gmii_rx_clk', used in period specification
    IOCLK: <TIMESPEC TS_eth_rx_clk_io = PERIOD "eth_rx_clk_io" TS_GMII_RX_CLK
    HIGH 50%>
 
-WARNING:NgdBuild:1345 - The constraint <TIMESPEC TS_sysclk = PERIOD "tnm_sysclk"
-   100 MHz;>
-   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(7
-   9)] is overridden by the constraint <TIMESPEC TS_hit1 = PERIOD "tnm_sysclk"
-   40 MHz;>
-   [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(8
-   0)]. The overriden constraint usually comes from the input netlist or ncf
-   files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message
-   to an error.
 Done...
 
-WARNING:NgdBuild:1212 - User specified non-default attribute value (10.0) was
-   detected for the CLKIN_PERIOD attribute on DCM "dcm0".  This does not match
-   the PERIOD constraint value (40 MHz.).  The uncertainty calculation will use
-   the non-default attribute value.  This could result in incorrect uncertainty
-   calculated for DCM output clocks.
 Checking expanded design ...
 WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<31>' has no driver
 WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<30>' has no driver
@@ -115,8 +137,6 @@ WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<13>' has no driver
 WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<12>' has no driver
 WARNING:NgdBuild:452 - logical net 'ipb_master_out_ipb_addr<11>' has no driver
 WARNING:NgdBuild:452 - logical net 'ipb_master_in_ipb_err' has no driver
-WARNING:NgdBuild:478 - clock net REFPLL with clock driver
-   slaves/TDCchannels/PLLgen/clkout6_buf drives no clock pins
 WARNING:NgdBuild:452 - logical net 'N4' has no driver
 WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<47>' has no driver
 WARNING:NgdBuild:452 - logical net 'ipbus/mac_addr<46>' has no driver
@@ -528,12 +548,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings: 301
+  Number of warnings: 298
 
-Total memory usage is 584812 kilobytes
+Total memory usage is 585320 kilobytes
 
 Writing NGD file "top.ngd" ...
-Total REAL time to NGDBUILD completion:  14 sec
-Total CPU time to NGDBUILD completion:   14 sec
+Total REAL time to NGDBUILD completion:  18 sec
+Total CPU time to NGDBUILD completion:   17 sec
 
 Writing NGDBUILD log file "top.bld"...

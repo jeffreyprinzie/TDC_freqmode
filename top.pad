@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Mar 22 12:43:22 2016
+Tue Mar 29 13:56:12 2016
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -319,7 +319,7 @@ U9|||VCCO_2|||2|||||3.30||||
 U10||IOBM|IO_L30P_GCLK1_D13_2|UNUSED||2|||||||||
 U11|scapt|IOB|IO_L23P_2|OUTPUT|LVCMOS33|2|12|SLOW||||LOCATED|NO|NONE|
 U12|||GND||||||||||||
-U13||IOBM|IO_L14P_D11_2|UNUSED||2|||||||||
+U13|TRIGGER|IOB|IO_L14P_D11_2|OUTPUT|LVCMOS33|2|12|SLOW||||LOCATED|NO|NONE|
 U14|||VCCO_2|||2|||||3.30||||
 U15||IOBM|IO_L5P_2|UNUSED||2|||||||||
 U16||IOBM|IO_L2P_CMPCLK_2|UNUSED||2|||||||||

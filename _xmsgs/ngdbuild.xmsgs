@@ -13,37 +13,55 @@
 </arg>
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="119" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(155)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
+<msg type="warning" file="ConstraintSystem" num="119" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(156)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
 </msg>
 
-<msg type="warning" file="ConstraintSystem" num="119" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(157)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
+<msg type="warning" file="ConstraintSystem" num="119" delta="old" >Constraint <arg fmt="%s" index="1">&lt;NET &quot;hit1&quot; CLOCK_DEDICATED_ROUTE = FALSE;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(158)]</arg>: This constraint cannot be distributed from the design objects matching &apos;<arg fmt="%s" index="2">NET &quot;hit1&quot;</arg>&apos; because those design objects do not contain or drive any instances of the correct type.
 </msg>
 
 <msg type="warning" file="ConstraintSystem" num="0" >TNM : GRPinputhit1 was distributed to a DCM but new TNM constraints were not derived. This TNM is used in the following user groups or specifications:
-&lt;TIMESPEC TS_hit1Divider = FROM &quot;GRPinputhit1&quot; TO &quot;GRPSYSCLK&quot; 4 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(205)]
+&lt;TIMESPEC TS_hit1Divider = FROM &quot;GRPinputhit1&quot; TO &quot;GRPSYSCLK&quot; 4 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(206)]
 </msg>
 
 <msg type="warning" file="ConstraintSystem" num="0" >TNM : GRPhit1 was distributed to a DCM but new TNM constraints were not derived. This TNM is used in the following user groups or specifications:
-&lt;TIMESPEC TS_Hit1_to_SYSCLK = FROM &quot;GRPhit1&quot; TO &quot;GRPSYSCLK&quot; 1 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(201)]
-&lt;TIMESPEC TS_CLK_0_to_Hit1 = FROM &quot;GRPCLK_0&quot; TO &quot;GRPhit1&quot; 1 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(203)]
+&lt;TIMESPEC TS_Hit1_to_SYSCLK = FROM &quot;GRPhit1&quot; TO &quot;GRPSYSCLK&quot; 1 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(202)]
+&lt;TIMESPEC TS_CLK_0_to_Hit1 = FROM &quot;GRPCLK_0&quot; TO &quot;GRPhit1&quot; 1 ns DATAPATHONLY;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(204)]
 </msg>
 
-<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_sysclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_CLKGEN</arg> instance <arg fmt="%s" index="5">dcm0</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_CLKGEN</arg> output(s): 
-<arg fmt="%s" index="7">CLKFX</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clocks_clk_125_i = PERIOD &quot;clocks_clk_125_i&quot; TS_hit1 * 1.25 HIGH 50%&gt;</arg>
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_sysclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_sysclk</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_CLKGEN</arg> instance <arg fmt="%s" index="5">dcm0</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_CLKGEN</arg> output(s): 
+<arg fmt="%s" index="7">CLKFX</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clocks_clk_125_i = PERIOD &quot;clocks_clk_125_i&quot; TS_sysclk * 1.25 HIGH 50%&gt;</arg>
 </msg>
 
-<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_sysclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_CLKGEN</arg> instance <arg fmt="%s" index="5">dcm0</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_CLKGEN</arg> output(s): 
-<arg fmt="%s" index="7">CLKFXDV</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clocks_clk_ipb_i = PERIOD &quot;clocks_clk_ipb_i&quot; TS_hit1 * 0.3125 HIGH 50%&gt;</arg>
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_sysclk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_sysclk</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_CLKGEN</arg> instance <arg fmt="%s" index="5">dcm0</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_CLKGEN</arg> output(s): 
+<arg fmt="%s" index="7">CLKFXDV</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clocks_clk_ipb_i = PERIOD &quot;clocks_clk_ipb_i&quot; TS_sysclk * 0.3125 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT3</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout3 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout3&quot; TS_hit1 * 8 PHASE 1.171875 ns HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT1</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout1 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout1&quot; TS_hit1 * 8 PHASE 0.390625 ns HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="new" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT5</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout5 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout5&quot; TS_hit1 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout0 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout0&quot; TS_hit1 * 8 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT4</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout4 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout4&quot; TS_hit1 * 4.8 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">tnm_hit1</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_hit1</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT2</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_slaves_TDCchannels_PLLgen_clkout2 = PERIOD &quot;slaves_TDCchannels_PLLgen_clkout2&quot; TS_hit1 * 8 PHASE 0.78125 ns HIGH 50%&gt;</arg>
 </msg>
 
 <msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">gmii_rx_clk</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_GMII_RX_CLK</arg>&apos;, was traced into <arg fmt="%s" index="4">BUFIO2</arg> instance <arg fmt="%s" index="5">bufio0</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">BUFIO2</arg> output(s): 
 <arg fmt="%s" index="7">IOCLK</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_eth_rx_clk_io = PERIOD &quot;eth_rx_clk_io&quot; TS_GMII_RX_CLK HIGH 50%&gt;</arg>
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_sysclk = PERIOD &quot;tnm_sysclk&quot; 100 MHz;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(79)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMESPEC TS_hit1 = PERIOD &quot;tnm_sysclk&quot; 40 MHz;&gt; [/home/jeffrey/projects/ipbus_2_0_v1/firmware/example_designs/ucf/atlys.ucf(80)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
-</msg>
-
-<msg type="warning" file="NgdBuild" num="1212" delta="old" >User specified non-default attribute value (<arg fmt="%s" index="1">10.0</arg>) was detected for the <arg fmt="%s" index="2">CLKIN_PERIOD</arg> attribute on <arg fmt="%s" index="3">DCM</arg> &quot;<arg fmt="%s" index="4">dcm0</arg>&quot;.  This does not match the PERIOD constraint value (<arg fmt="%s" index="5">40 MHz.</arg>).  The uncertainty calculation will use the non-default attribute value.  This could result in incorrect uncertainty calculated for <arg fmt="%s" index="6">DCM</arg> output clocks.
 </msg>
 
 <msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">ipb_master_out_ipb_addr&lt;31&gt;</arg>&apos; has no driver
@@ -110,9 +128,6 @@
 </msg>
 
 <msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">ipb_master_in_ipb_err</arg>&apos; has no driver
-</msg>
-
-<msg type="warning" file="NgdBuild" num="478" delta="old" >clock net <arg fmt="%s" index="1">REFPLL</arg> with clock driver <arg fmt="%s" index="2">slaves/TDCchannels/PLLgen/clkout6_buf</arg> drives no clock pins
 </msg>
 
 <msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">N4</arg>&apos; has no driver

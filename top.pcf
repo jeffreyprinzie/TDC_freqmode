@@ -1,8 +1,9 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Mar 22 12:41:05 2016
+// Written by: Map P.20131013 on Tue Mar 29 13:50:40 2016
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "TRIGGER" LOCATE = SITE "U13" LEVEL 1;
 COMP "sda" LOCATE = SITE "P11" LEVEL 1;
 COMP "sck" LOCATE = SITE "N10" LEVEL 1;
 COMP "sdai2c" LOCATE = SITE "M11" LEVEL 1;
@@ -91,12 +92,10 @@ COMPGRP L1buffers_ch1.SLICE = COMP
         "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1<2>";
 COMPGRP "L1buffers_ch1.SLICE" LOCATE = SITE "SLICE_X48Y48:SLICE_X51Y55" LEVEL
         4;
-COMPGRP FSM_TDC1.SLICE = COMP
-        "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd1" COMP
+COMPGRP FSM_TDC1.SLICE = COMP "slaves/TDCchannels/dc1/TDCcore/valid_hit" COMP
         "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded<1>" COMP
-        "slaves/TDCchannels/dc1/TDCcore/valid_hit" COMP
-        "slaves/TDCchannels/dc1/TDCcore/coarse_time<1>" COMP
-        "slaves/TDCchannels/dc1/TDCcore/coarse_time<2>";
+        "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd1" COMP
+        "slaves/TDCchannels/dc1/TDCcore/coarse_time<1>";
 COMPGRP "FSM_TDC1.SLICE" LOCATE = SITE "SLICE_X52Y48:SLICE_X59Y55" SITE
         "SLICE_X30Y48:SLICE_X45Y55" LEVEL 4;
 TIMEGRP eth_rx_clk_io = BEL "eth/rx_er_r" BEL "eth/rx_dv_r" BEL "eth/rxd_r_0"
@@ -10636,7 +10635,342 @@ TIMEGRP clocks_clk_ipb_i = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
         "slaves/slave0/ipbus_out_ipb_rdata_31" BEL "slaves/slave0/ack" BEL
         "slaves/RAM2/ack" PIN "slaves/RAM2/Mram_ram_pins<19>" BEL
         "slaves/RAM1/ack" PIN "slaves/RAM1/Mram_ram_pins<19>";
-TIMEGRP GRPSYSCLK = BEL "slaves/TDCchannels/dc1/write_buffer" BEL
+TIMEGRP slaves_TDCchannels_PLLgen_clkout5 = BEL "slaves/lockCounter_0" BEL
+        "slaves/lockCounter_1" BEL "slaves/lockCounter_2" BEL
+        "slaves/lockCounter_3" BEL "slaves/lockCounter_4" BEL
+        "slaves/lockCounter_5" BEL "slaves/lockCounter_6" BEL
+        "slaves/lockCounter_7" BEL "slaves/lockCounter_8" BEL
+        "slaves/lockCounter_9" BEL "slaves/lockCounter_10" BEL
+        "slaves/lockCounter_11" BEL "slaves/lockCounter_12" BEL
+        "slaves/lockCounter_13" BEL "slaves/lockCounter_14" BEL
+        "slaves/lockCounter_15" BEL "slaves/lockCounter_16" BEL
+        "slaves/lockCounter_17" BEL "slaves/lockCounter_18" BEL
+        "slaves/lockCounter_19" BEL "slaves/lockCounter_20" BEL
+        "slaves/lockCounter_21" BEL "slaves/TDCchannels/PLLgen/clkout6_buf"
+        BEL "slaves/lockLed" BEL "PLLREF1_P" BEL "PLLREF1_N" BEL "PLLREF2_P"
+        BEL "PLLREF2_N";
+PIN slaves/RAM2/Mram_ram_pins<18> = BEL "slaves/RAM2/Mram_ram" PINNAME CLKA;
+PIN slaves/RAM1/Mram_ram_pins<18> = BEL "slaves/RAM1/Mram_ram" PINNAME CLKA;
+TIMEGRP slaves_TDCchannels_PLLgen_clkout4 = PIN
+        "slaves/RAM2/Mram_ram_pins<18>" PIN "slaves/RAM1/Mram_ram_pins<18>"
+        BEL "slaves/TDCchannels/hitCount1_tm1_0" BEL
+        "slaves/TDCchannels/hitCount1_tm1_1" BEL
+        "slaves/TDCchannels/hitCount1_tm1_2" BEL
+        "slaves/TDCchannels/hitCount1_tm1_3" BEL
+        "slaves/TDCchannels/hitCount1_tm1_4" BEL
+        "slaves/TDCchannels/hitCount1_tm1_5" BEL
+        "slaves/TDCchannels/hitCount1_tm1_6" BEL
+        "slaves/TDCchannels/hitCount1_tm1_7" BEL
+        "slaves/TDCchannels/hitCount1_tm1_8" BEL
+        "slaves/TDCchannels/hitCount1_tm1_9" BEL
+        "slaves/TDCchannels/hitCount1_tm1_10" BEL
+        "slaves/TDCchannels/hitCount1_tm1_11" BEL
+        "slaves/TDCchannels/hitCount1_tm1_12" BEL
+        "slaves/TDCchannels/hitCount1_tm1_13" BEL
+        "slaves/TDCchannels/hitCount1_tm1_14" BEL
+        "slaves/TDCchannels/hitCount1_tm1_15" BEL
+        "slaves/TDCchannels/hitCount1_tm1_16" BEL
+        "slaves/TDCchannels/hitCount1_tm1_17" BEL
+        "slaves/TDCchannels/hitCount1_tm1_18" BEL
+        "slaves/TDCchannels/hitCount1_tm1_19" BEL
+        "slaves/TDCchannels/hitCount1_tm1_20" BEL
+        "slaves/TDCchannels/hitCount1_tm1_21" BEL
+        "slaves/TDCchannels/hitCount1_tm1_22" BEL
+        "slaves/TDCchannels/hitCount1_tm1_23" BEL
+        "slaves/TDCchannels/hitCount1_tm1_24" BEL
+        "slaves/TDCchannels/hitCount1_tm1_25" BEL
+        "slaves/TDCchannels/hitCount1_tm1_26" BEL
+        "slaves/TDCchannels/hitCount1_tm1_27" BEL
+        "slaves/TDCchannels/hitCount1_tm1_28" BEL
+        "slaves/TDCchannels/hitCount1_tm1_29" BEL
+        "slaves/TDCchannels/hitCount1_tm1_30" BEL
+        "slaves/TDCchannels/hitCount1_tm1_31" BEL
+        "slaves/TDCchannels/PLLgen/clkout5_buf" BEL
+        "slaves/TDCchannels/dc1/write_buffer" BEL
+        "slaves/TDCchannels/dc1/hit1_0" BEL "slaves/TDCchannels/dc1/hit1_1"
+        BEL "slaves/TDCchannels/dc1/hit1_2" BEL
+        "slaves/TDCchannels/dc1/hit1_3" BEL "slaves/TDCchannels/dc1/hit1_4"
+        BEL "slaves/TDCchannels/dc1/hit1_5" BEL
+        "slaves/TDCchannels/dc1/hit1_6" BEL "slaves/TDCchannels/dc1/hit1_7"
+        BEL "slaves/TDCchannels/dc1/hit0_0" BEL
+        "slaves/TDCchannels/dc1/hit0_1" BEL "slaves/TDCchannels/dc1/hit0_2"
+        BEL "slaves/TDCchannels/dc1/hit0_3" BEL
+        "slaves/TDCchannels/dc1/hit0_4" BEL "slaves/TDCchannels/dc1/hit0_5"
+        BEL "slaves/TDCchannels/dc1/hit0_6" BEL
+        "slaves/TDCchannels/dc1/hit0_7" BEL
+        "slaves/TDCchannels/dc1/FSMstate_0" BEL
+        "slaves/TDCchannels/dc1/FSMstate_1" BEL
+        "slaves/TDCchannels/dc1/FSMstate_2" BEL
+        "slaves/TDCchannels/dc1/hitCount_0" BEL
+        "slaves/TDCchannels/dc1/hitCount_1" BEL
+        "slaves/TDCchannels/dc1/hitCount_2" BEL
+        "slaves/TDCchannels/dc1/hitCount_3" BEL
+        "slaves/TDCchannels/dc1/hitCount_4" BEL
+        "slaves/TDCchannels/dc1/hitCount_5" BEL
+        "slaves/TDCchannels/dc1/hitCount_6" BEL
+        "slaves/TDCchannels/dc1/hitCount_7" BEL
+        "slaves/TDCchannels/dc1/hitCount_8" BEL
+        "slaves/TDCchannels/dc1/hitCount_9" BEL
+        "slaves/TDCchannels/dc1/hitCount_10" BEL
+        "slaves/TDCchannels/dc1/hitCount_11" BEL
+        "slaves/TDCchannels/dc1/hitCount_12" BEL
+        "slaves/TDCchannels/dc1/hitCount_13" BEL
+        "slaves/TDCchannels/dc1/hitCount_14" BEL
+        "slaves/TDCchannels/dc1/hitCount_15" BEL
+        "slaves/TDCchannels/dc1/hitCount_16" BEL
+        "slaves/TDCchannels/dc1/hitCount_17" BEL
+        "slaves/TDCchannels/dc1/hitCount_18" BEL
+        "slaves/TDCchannels/dc1/hitCount_19" BEL
+        "slaves/TDCchannels/dc1/hitCount_20" BEL
+        "slaves/TDCchannels/dc1/hitCount_21" BEL
+        "slaves/TDCchannels/dc1/hitCount_22" BEL
+        "slaves/TDCchannels/dc1/hitCount_23" BEL
+        "slaves/TDCchannels/dc1/hitCount_24" BEL
+        "slaves/TDCchannels/dc1/hitCount_25" BEL
+        "slaves/TDCchannels/dc1/hitCount_26" BEL
+        "slaves/TDCchannels/dc1/hitCount_27" BEL
+        "slaves/TDCchannels/dc1/hitCount_28" BEL
+        "slaves/TDCchannels/dc1/hitCount_29" BEL
+        "slaves/TDCchannels/dc1/hitCount_30" BEL
+        "slaves/TDCchannels/dc1/hitCount_31" BEL
+        "slaves/TDCchannels/dc1/TDCcore/valid_hit" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1_3" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L1_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L1_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L1_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/coarse_time_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/coarse_time_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/coarse_time_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/Mshreg_hit_syn" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_syn" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_3"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_4"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_5"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_0"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_3"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_4"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gcc0.gc0.count_d1_5"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_3"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_4"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_0"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_4"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_5"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_0"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_3"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_4"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_5"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_6"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d3"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_fb_i"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_fb_i"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM31/SP"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM31/DP"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM32/SP"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM32/DP"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMC"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMA"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMB"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMC"
+        BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD"
+        BEL "slaves/TDCchannels/dc1/ramManager/SR_15_0" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_1" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_2" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_3" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_4" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_5" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_6" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_7" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_8" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_9" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_10" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_11" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_12" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_13" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_14" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_15" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_16" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_17" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_18" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_19" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_20" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_21" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_22" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_23" BEL
+        "slaves/TDCchannels/dc1/ramManager/FSMstate_0" BEL
+        "slaves/TDCchannels/dc1/ramManager/FSMstate_1" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_0" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_1" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_2" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_3" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_4" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_5" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_6" BEL
+        "slaves/TDCchannels/dc1/ramManager/ramAddr_7" BEL
+        "slaves/TDCchannels/dc1/ramManager/frameCounter_0" BEL
+        "slaves/TDCchannels/dc1/ramManager/frameCounter_1" BEL
+        "slaves/TDCchannels/dc1/ramManager/handshakeFPGA" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<0>1_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<1>1_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<2>_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<3>_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<4>_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<5>_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<6>_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Result<7>_FRB" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_24" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_24" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_25" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_25" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_26" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_26" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_27" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_27" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_28" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_28" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_29" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_29" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_30" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_30" BEL
+        "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_31" BEL
+        "slaves/TDCchannels/dc1/ramManager/SR_15_31" BEL
+        "slaves/TDCchannels/triggerCounter_0" BEL
+        "slaves/TDCchannels/triggerCounter_1" BEL
+        "slaves/TDCchannels/triggerCounter_2" BEL
+        "slaves/TDCchannels/triggerCounter_3" BEL
+        "slaves/TDCchannels/triggerCounter_4" BEL
+        "slaves/TDCchannels/triggerCounter_5" BEL
+        "slaves/TDCchannels/triggerCounter_6" BEL
+        "slaves/TDCchannels/triggerCounter_7";
+TIMEGRP GRPSYSCLK = BEL "slaves/TDCchannels/hitCount1_tm1_0" BEL
+        "slaves/TDCchannels/hitCount1_tm1_1" BEL
+        "slaves/TDCchannels/hitCount1_tm1_2" BEL
+        "slaves/TDCchannels/hitCount1_tm1_3" BEL
+        "slaves/TDCchannels/hitCount1_tm1_4" BEL
+        "slaves/TDCchannels/hitCount1_tm1_5" BEL
+        "slaves/TDCchannels/hitCount1_tm1_6" BEL
+        "slaves/TDCchannels/hitCount1_tm1_7" BEL
+        "slaves/TDCchannels/hitCount1_tm1_8" BEL
+        "slaves/TDCchannels/hitCount1_tm1_9" BEL
+        "slaves/TDCchannels/hitCount1_tm1_10" BEL
+        "slaves/TDCchannels/hitCount1_tm1_11" BEL
+        "slaves/TDCchannels/hitCount1_tm1_12" BEL
+        "slaves/TDCchannels/hitCount1_tm1_13" BEL
+        "slaves/TDCchannels/hitCount1_tm1_14" BEL
+        "slaves/TDCchannels/hitCount1_tm1_15" BEL
+        "slaves/TDCchannels/hitCount1_tm1_16" BEL
+        "slaves/TDCchannels/hitCount1_tm1_17" BEL
+        "slaves/TDCchannels/hitCount1_tm1_18" BEL
+        "slaves/TDCchannels/hitCount1_tm1_19" BEL
+        "slaves/TDCchannels/hitCount1_tm1_20" BEL
+        "slaves/TDCchannels/hitCount1_tm1_21" BEL
+        "slaves/TDCchannels/hitCount1_tm1_22" BEL
+        "slaves/TDCchannels/hitCount1_tm1_23" BEL
+        "slaves/TDCchannels/hitCount1_tm1_24" BEL
+        "slaves/TDCchannels/hitCount1_tm1_25" BEL
+        "slaves/TDCchannels/hitCount1_tm1_26" BEL
+        "slaves/TDCchannels/hitCount1_tm1_27" BEL
+        "slaves/TDCchannels/hitCount1_tm1_28" BEL
+        "slaves/TDCchannels/hitCount1_tm1_29" BEL
+        "slaves/TDCchannels/hitCount1_tm1_30" BEL
+        "slaves/TDCchannels/hitCount1_tm1_31" BEL
+        "slaves/TDCchannels/dc1/write_buffer" BEL
         "slaves/TDCchannels/dc1/hit1_0" BEL "slaves/TDCchannels/dc1/hit1_1"
         BEL "slaves/TDCchannels/dc1/hit1_2" BEL
         "slaves/TDCchannels/dc1/hit1_3" BEL "slaves/TDCchannels/dc1/hit1_4"
@@ -10855,7 +11189,48 @@ TIMEGRP GRPSYSCLK = BEL "slaves/TDCchannels/dc1/write_buffer" BEL
         "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_30" BEL
         "slaves/TDCchannels/dc1/ramManager/SR_15_30" BEL
         "slaves/TDCchannels/dc1/ramManager/Mshreg_SR_15_31" BEL
-        "slaves/TDCchannels/dc1/ramManager/SR_15_31";
+        "slaves/TDCchannels/dc1/ramManager/SR_15_31" BEL
+        "slaves/TDCchannels/triggerCounter_0" BEL
+        "slaves/TDCchannels/triggerCounter_1" BEL
+        "slaves/TDCchannels/triggerCounter_2" BEL
+        "slaves/TDCchannels/triggerCounter_3" BEL
+        "slaves/TDCchannels/triggerCounter_4" BEL
+        "slaves/TDCchannels/triggerCounter_5" BEL
+        "slaves/TDCchannels/triggerCounter_6" BEL
+        "slaves/TDCchannels/triggerCounter_7";
+TIMEGRP slaves_TDCchannels_PLLgen_clkout0 = BEL
+        "slaves/TDCchannels/PLLgen/clkout1_buf" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_2";
+TIMEGRP slaves_TDCchannels_PLLgen_clkout1 = BEL
+        "slaves/TDCchannels/PLLgen/clkout2_buf" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2";
+TIMEGRP slaves_TDCchannels_PLLgen_clkout2 = BEL
+        "slaves/TDCchannels/PLLgen/clkout3_buf" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1";
+TIMEGRP slaves_TDCchannels_PLLgen_clkout3 = BEL
+        "slaves/TDCchannels/PLLgen/clkout4_buf" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0";
+PIN slaves/TDCchannels/PLLgen/pll_base_inst/PLL_ADV_pins<2> = BEL
+        "slaves/TDCchannels/PLLgen/pll_base_inst/PLL_ADV" PINNAME CLKIN1;
+TIMEGRP tnm_hit1 = PIN
+        "slaves/TDCchannels/PLLgen/pll_base_inst/PLL_ADV_pins<2>" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_3" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0_0" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0_1" BEL
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0_2" BEL
+        "slaves/TDCchannels/dc1/TDCcore/Mshreg_hit_syn";
 TIMEGRP GRPinputhit1 = BEL "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_0"
         BEL "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_1" BEL
         "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0_2" BEL
@@ -10890,7 +11265,8 @@ TIMEGRP TG_gmii_tx = BEL "gmii_txd<7>" BEL "gmii_txd<6>" BEL "gmii_txd<5>" BEL
         BEL "gmii_txd<0>" BEL "gmii_tx_en" BEL "gmii_tx_er";
 NET "hit1" MAXSKEW = 0 ns;
 NET "slaves/SYSCLK" MAXSKEW = 0 ns;
-TS_hit1 = PERIOD TIMEGRP "tnm_sysclk" 40 MHz HIGH 50%;
+TS_sysclk = PERIOD TIMEGRP "tnm_sysclk" 100 MHz HIGH 50%;
+TS_hit1 = PERIOD TIMEGRP "tnm_hit1" 40 MHz HIGH 50%;
 PATH TS_tig_ipb_125_path = FROM TIMEGRP "tnm_ipb_clk" TO TIMEGRP "tnm_clk125";
 PATH "TS_tig_ipb_125_path" TIG;
 PATH TS_tig_125_ipb_path = FROM TIMEGRP "tnm_clk125" TO TIMEGRP "tnm_ipb_clk";
@@ -10906,9 +11282,24 @@ TS_SYSCLK_to_IPBCLK = MAXDELAY FROM TIMEGRP "GRPSYSCLK" TO TIMEGRP "GRPIPBCLK"
         2 ns DATAPATHONLY;
 TS_IPBCLK_to_SYSCLK = MAXDELAY FROM TIMEGRP "GRPIPBCLK" TO TIMEGRP "GRPSYSCLK"
         2 ns DATAPATHONLY;
-TS_clocks_clk_125_i = PERIOD TIMEGRP "clocks_clk_125_i" TS_hit1 * 1.25 HIGH
+TS_clocks_clk_125_i = PERIOD TIMEGRP "clocks_clk_125_i" TS_sysclk * 1.25 HIGH
         50%;
-TS_clocks_clk_ipb_i = PERIOD TIMEGRP "clocks_clk_ipb_i" TS_hit1 * 0.3125 HIGH
+TS_clocks_clk_ipb_i = PERIOD TIMEGRP "clocks_clk_ipb_i" TS_sysclk * 0.3125
+        HIGH 50%;
+TS_slaves_TDCchannels_PLLgen_clkout3 = PERIOD TIMEGRP
+        "slaves_TDCchannels_PLLgen_clkout3" TS_hit1 * 8 PHASE 1.171875 ns HIGH
+        50%;
+TS_slaves_TDCchannels_PLLgen_clkout1 = PERIOD TIMEGRP
+        "slaves_TDCchannels_PLLgen_clkout1" TS_hit1 * 8 PHASE 0.390625 ns HIGH
+        50%;
+TS_slaves_TDCchannels_PLLgen_clkout5 = PERIOD TIMEGRP
+        "slaves_TDCchannels_PLLgen_clkout5" TS_hit1 HIGH 50%;
+TS_slaves_TDCchannels_PLLgen_clkout0 = PERIOD TIMEGRP
+        "slaves_TDCchannels_PLLgen_clkout0" TS_hit1 * 8 HIGH 50%;
+TS_slaves_TDCchannels_PLLgen_clkout4 = PERIOD TIMEGRP
+        "slaves_TDCchannels_PLLgen_clkout4" TS_hit1 * 4.8 HIGH 50%;
+TS_slaves_TDCchannels_PLLgen_clkout2 = PERIOD TIMEGRP
+        "slaves_TDCchannels_PLLgen_clkout2" TS_hit1 * 8 PHASE 0.78125 ns HIGH
         50%;
 TS_eth_rx_clk_io = PERIOD TIMEGRP "eth_rx_clk_io" TS_GMII_RX_CLK HIGH 50%;
 PIN Gbuffer_hit1_pins<1> = BEL "Gbuffer_hit1" PINNAME O;

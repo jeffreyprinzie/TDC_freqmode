@@ -12,18 +12,17 @@
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/eth - eth_s6_gmii - rtl</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/ipbus - ipbus_ctrl - rtl</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/myprogrammer - programmer</ClosedNode>
-         <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/slaves - slaves - rtl/TDCchannels - TDCslave/dc1 - dataChannel</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/slaves - slaves - rtl/TDCchannels - TDCslave/dc1 - dataChannel/TDCcore - timegen</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/slaves - slaves - rtl/TDCchannels - TDCslave/dc2 - dataChannel</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>PLLgen - PLL (/home/jeffrey/projects/work_freqmode/source/TDC/ipcore_dir/PLL.xco)</SelectedItem>
+         <SelectedItem>top - rtl (/home/jeffrey/projects/ipbus/firmware/example_designs/hdl/demo_atlys/top_atlys.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >19</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000022f000000020000000000000000000000000200000064ffffffff0000008100000003000000020000022f0000000100000003000000000000000100000003</ViewHeaderState>
-      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>PLLgen - PLL (/home/jeffrey/projects/work_freqmode/source/TDC/ipcore_dir/PLL.xco)</CurrentItem>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000003b5000000020000000000000000000000000200000064ffffffff000000810000000300000002000003b50000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>top - rtl (/home/jeffrey/projects/ipbus/firmware/example_designs/hdl/demo_atlys/top_atlys.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -34,13 +33,13 @@
          <ClosedNode>Implement Design/Place &amp; Route/Generate IBIS Model</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem>View Technology Schematic</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >26</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000207000000010000000100000000000000000000000064ffffffff000000810000000000000001000002070000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000001f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000001f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem>View Technology Schematic</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -51,7 +50,7 @@
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000610000000040101000100000000000000000000000064ffffffff000000810000000000000004000000e900000001000000000000011b0000000100000000000000840000000100000000000003880000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>atlys.ucf</CurrentItem>
+      <CurrentItem>/home/jeffrey/projects/ipbus/firmware/ethernet/hdl/emac_hostbus_decl.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -99,13 +98,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000207000000010000000100000000000000000000000064ffffffff000000810000000000000001000002070000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>

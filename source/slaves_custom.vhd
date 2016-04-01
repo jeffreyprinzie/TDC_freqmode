@@ -22,7 +22,8 @@ entity slaves is
 		ckref_tdc: in std_logic;
 		hit1: in std_logic;
 		handshakeleds : out std_logic_vector(2 downto 0);
-		REFPLL : out std_logic
+		REFPLL : inout std_logic;
+		TRIGGER : out std_logic
 	);
 
 end slaves;
@@ -44,7 +45,8 @@ architecture rtl of slaves is
 	signal we1 : std_logic;
 	
 	signal hitcount1 : std_logic_vector (31 downto 0);
-
+	signal lockCounter : integer range 0 to 4000000;
+	signal lockLed : std_logic;
 	
 	
 	
@@ -189,10 +191,20 @@ begin
 		
 		hitCount1=>hitCount1,
 		--hitCount2=>hitCount2,
-		SYSCLK=>SYSCLK
+		SYSCLK=>SYSCLK,
+		TRIGGER=>TRIGGER
 	);
 	
-	handshakeleds<='1' & handshakeFPGA1 & '0';-- & handshakeFPGA2;
+	process (REFPLL)
+	begin
+		if(rising_edge(REFPLL)) then
+			lockCounter<=lockCounter +1;
+			if(lockCounter = 0) then
+				lockLed<= not lockLed;
+			end if;
+		end if;
+	end process;
+	handshakeleds<=lockLed & handshakeFPGA1 & '0';-- & handshakeFPGA2;
 	
 --	datagen: entity test_datagen
 --	port map(
