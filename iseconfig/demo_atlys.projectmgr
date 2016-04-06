@@ -8,6 +8,7 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/tester_timegen |home|jeffrey|projects|work|tester_timegen.v</ClosedNode>
+         <ClosedNode>/top - rtl |home|Administrators|jeffrey|xilinx|work_freqmode|top_atlys.vhd/ipbus - ipbus_ctrl - rtl</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/clocks - clocks_s6_extphy_100MHz - rtl</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/eth - eth_s6_gmii - rtl</ClosedNode>
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/ipbus - ipbus_ctrl - rtl</ClosedNode>
@@ -16,13 +17,13 @@
          <ClosedNode>/top - rtl |home|jeffrey|projects|ipbus|firmware|example_designs|hdl|demo_atlys|top_atlys.vhd/slaves - slaves - rtl/TDCchannels - TDCslave/dc2 - dataChannel</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>top - rtl (/home/jeffrey/projects/work_freqmode/top_atlys.vhd)</SelectedItem>
+         <SelectedItem>top - rtl (/home/Administrators/jeffrey/xilinx/work_freqmode/top_atlys.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >37</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >12</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000003d7000000020000000000000000000000000200000064ffffffff000000810000000300000002000003d70000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000032e000000020000000000000000000000000200000064ffffffff0000008100000003000000020000032e0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>top - rtl (/home/jeffrey/projects/work_freqmode/top_atlys.vhd)</CurrentItem>
+      <CurrentItem>top - rtl (/home/Administrators/jeffrey/xilinx/work_freqmode/top_atlys.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -34,13 +35,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Generate Programming File</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000342000000010000000100000000000000000000000064ffffffff000000810000000000000001000003420000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000014f000000010000000100000000000000000000000064ffffffff0000008100000000000000010000014f0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Generate Programming File</CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -49,9 +50,9 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000610000000040101000100000000000000000000000064ffffffff000000810000000000000004000000e900000001000000000000011b0000000100000000000000840000000100000000000003880000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000390000000040101000100000000000000000000000064ffffffff000000810000000000000004000000e900000001000000000000011b0000000100000000000000840000000100000000000001080000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>/home/jeffrey/projects/ipbus/firmware/ethernet/hdl/emac_hostbus_decl.vhd</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -72,13 +73,13 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000351000000010000000100000000000000000000000064ffffffff000000810000000000000001000003510000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
@@ -99,13 +100,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000207000000010000000100000000000000000000000064ffffffff000000810000000000000001000002070000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>

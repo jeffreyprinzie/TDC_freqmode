@@ -59,11 +59,11 @@ NET "hit1_N" DIFF_TERM = "TRUE";
 #NET "hit2_P" DIFF_TERM = "TRUE";
 #NET "hit2_N" DIFF_TERM = "TRUE";
 
-NET "ckref_tdc_p" LOC = U10;
-NET "ckref_tdc_n" LOC = V10;
-NET "ckref_tdc_p" IOSTANDARD = LVDS_33;
-NET "ckref_tdc_p" DIFF_TERM = "TRUE";
-NET "ckref_tdc_n" DIFF_TERM = "TRUE";
+NET "trigger_diff_p" LOC = U10;
+NET "trigger_diff_n" LOC = V10;
+NET "trigger_diff_p" IOSTANDARD = LVDS_33;
+NET "trigger_diff_p" DIFF_TERM = "TRUE";
+NET "trigger_diff_n" DIFF_TERM = "TRUE";
 
 
 NET "PLLREF1_P" LOC = U5;

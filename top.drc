@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Apr  1 17:50:16 2016
+Wed Apr  6 11:54:59 2016
 
 drc -z top.ncd top.pcf
 
@@ -30,11 +30,11 @@ WARNING:PhysDesignRules:2212 - Async clocking for BRAM (comp
    of the BRAM.
 WARNING:PhysDesignRules:367 - The signal
    <slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/g
-   rf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_O> is incomplete. The
+   rf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 WARNING:PhysDesignRules:367 - The signal
    <slaves/TDCchannels/dc1/TDCcore/hit_fifo/U0/xst_fifo_generator/gconvfifo.rf/g
-   rf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM2_RAMD_O> is incomplete. The
+   rf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_O> is incomplete. The
    signal does not drive any load pins in the design.
 DRC detected 0 errors and 6 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

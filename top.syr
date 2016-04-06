@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: top.prj
@@ -3097,32 +3097,6 @@ INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_
 
 Pipelining and Register Balancing Report ...
 
-Processing Unit <ipbus/udp_if/tx_byte_sum> :
-	Register(s) lo_byte_calc.lo_byte_int_0 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_0_BRB0 lo_byte_calc.lo_byte_int_0_BRB1 lo_byte_calc.lo_byte_int_0_BRB2 lo_byte_calc.lo_byte_int_0_BRB3 lo_byte_calc.lo_byte_int_0_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_1 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_1_BRB0 lo_byte_calc.lo_byte_int_1_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_2 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_2_BRB0 lo_byte_calc.lo_byte_int_2_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_3 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_3_BRB0 lo_byte_calc.lo_byte_int_3_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_4 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_4_BRB0 lo_byte_calc.lo_byte_int_4_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_5 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_5_BRB0 lo_byte_calc.lo_byte_int_5_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_6 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_6_BRB0 lo_byte_calc.lo_byte_int_6_BRB4.
-	Register(s) lo_byte_calc.lo_byte_int_7 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_7_BRB0 lo_byte_calc.lo_byte_int_7_BRB4.
-Unit <ipbus/udp_if/tx_byte_sum> processed.
-
-Processing Unit <ipbus/udp_if/rx_ram_selector> :
-	Register(s) busy_block.busy_i has(ve) been backward balanced into : busy_block.busy_i_BRB0 busy_block.busy_i_BRB1.
-Unit <ipbus/udp_if/rx_ram_selector> processed.
-
-Processing Unit <ipbus/udp_if/ping> :
-Unit <ipbus/udp_if/ping> processed.
-
-Processing Unit <ipbus/udp_if/status> :
-	Register(s) next_addr.next_addr_2 has(ve) been backward balanced into : next_addr.next_addr_2_BRB0 next_addr.next_addr_2_BRB1 next_addr.next_addr_2_BRB2 next_addr.next_addr_2_BRB3 next_addr.next_addr_2_BRB4.
-	Register(s) next_addr.next_addr_4 has(ve) been backward balanced into : next_addr.next_addr_4_BRB0 next_addr.next_addr_4_BRB2.
-	Register(s) next_addr.next_addr_5 has(ve) been backward balanced into : next_addr.next_addr_5_BRB0 next_addr.next_addr_5_BRB1 next_addr.next_addr_5_BRB3 next_addr.next_addr_5_BRB4 next_addr.next_addr_5_BRB8 next_addr.next_addr_5_BRB10 next_addr.next_addr_5_BRB11 next_addr.next_addr_5_BRB13 next_addr.next_addr_5_BRB15.
-	Register(s) next_addr.next_addr_6 has(ve) been backward balanced into : next_addr.next_addr_6_BRB0 next_addr.next_addr_6_BRB2 next_addr.next_addr_6_BRB3 next_addr.next_addr_6_BRB5.
-	Register(s) send_pending has(ve) been backward balanced into : send_pending_BRB0 send_pending_BRB1.
-Unit <ipbus/udp_if/status> processed.
-
 Processing Unit <ipbus/udp_if/payload> :
 	Register(s) build_packet.load_buf_int has(ve) been backward balanced into : build_packet.load_buf_int_BRB0 build_packet.load_buf_int_BRB1.
 	Register(s) next_addr_block.addr_int_10 has(ve) been backward balanced into : next_addr_block.addr_int_10_BRB0 next_addr_block.addr_int_10_BRB4.
@@ -3186,6 +3160,32 @@ Processing Unit <ipbus/udp_if/tx_main> :
 	Register(s) state_machine.state_0 has(ve) been backward balanced into : state_machine.state_0_BRB0 state_machine.state_0_BRB1 state_machine.state_0_BRB2 state_machine.state_0_BRB3 state_machine.state_0_BRB4 state_machine.state_0_BRB5.
 	Register(s) state_machine.state_1 has(ve) been backward balanced into : state_machine.state_1_BRB0 state_machine.state_1_BRB1 state_machine.state_1_BRB3 state_machine.state_1_BRB4.
 Unit <ipbus/udp_if/tx_main> processed.
+
+Processing Unit <ipbus/udp_if/tx_byte_sum> :
+	Register(s) lo_byte_calc.lo_byte_int_0 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_0_BRB0 lo_byte_calc.lo_byte_int_0_BRB1 lo_byte_calc.lo_byte_int_0_BRB2 lo_byte_calc.lo_byte_int_0_BRB3 lo_byte_calc.lo_byte_int_0_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_1 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_1_BRB0 lo_byte_calc.lo_byte_int_1_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_2 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_2_BRB0 lo_byte_calc.lo_byte_int_2_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_3 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_3_BRB0 lo_byte_calc.lo_byte_int_3_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_4 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_4_BRB0 lo_byte_calc.lo_byte_int_4_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_5 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_5_BRB0 lo_byte_calc.lo_byte_int_5_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_6 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_6_BRB0 lo_byte_calc.lo_byte_int_6_BRB4.
+	Register(s) lo_byte_calc.lo_byte_int_7 has(ve) been backward balanced into : lo_byte_calc.lo_byte_int_7_BRB0 lo_byte_calc.lo_byte_int_7_BRB4.
+Unit <ipbus/udp_if/tx_byte_sum> processed.
+
+Processing Unit <ipbus/udp_if/rx_ram_selector> :
+	Register(s) busy_block.busy_i has(ve) been backward balanced into : busy_block.busy_i_BRB0 busy_block.busy_i_BRB1.
+Unit <ipbus/udp_if/rx_ram_selector> processed.
+
+Processing Unit <ipbus/udp_if/ping> :
+Unit <ipbus/udp_if/ping> processed.
+
+Processing Unit <ipbus/udp_if/status> :
+	Register(s) next_addr.next_addr_2 has(ve) been backward balanced into : next_addr.next_addr_2_BRB0 next_addr.next_addr_2_BRB1 next_addr.next_addr_2_BRB2 next_addr.next_addr_2_BRB3 next_addr.next_addr_2_BRB4.
+	Register(s) next_addr.next_addr_4 has(ve) been backward balanced into : next_addr.next_addr_4_BRB0 next_addr.next_addr_4_BRB2.
+	Register(s) next_addr.next_addr_5 has(ve) been backward balanced into : next_addr.next_addr_5_BRB0 next_addr.next_addr_5_BRB1 next_addr.next_addr_5_BRB3 next_addr.next_addr_5_BRB4 next_addr.next_addr_5_BRB8 next_addr.next_addr_5_BRB10 next_addr.next_addr_5_BRB11 next_addr.next_addr_5_BRB13 next_addr.next_addr_5_BRB15.
+	Register(s) next_addr.next_addr_6 has(ve) been backward balanced into : next_addr.next_addr_6_BRB0 next_addr.next_addr_6_BRB2 next_addr.next_addr_6_BRB3 next_addr.next_addr_6_BRB5.
+	Register(s) send_pending has(ve) been backward balanced into : send_pending_BRB0 send_pending_BRB1.
+Unit <ipbus/udp_if/status> processed.
 
 Processing Unit <ipbus/trans/iface> :
 	Register(s) dsel has(ve) been backward balanced into : dsel_BRB0 dsel_BRB1.
@@ -3391,10 +3391,10 @@ Primitive and Black Box Usage:
 #      BUFIO2                      : 1
 #      IBUF                        : 15
 #      IBUFG                       : 2
-#      IBUFGDS                     : 2
+#      IBUFGDS                     : 1
 #      IOBUF                       : 1
 #      OBUF                        : 25
-#      OBUFDS                      : 2
+#      OBUFDS                      : 3
 # DCMs                             : 1
 #      DCM_CLKGEN                  : 1
 # Others                           : 11
@@ -3837,26 +3837,26 @@ Offset:              3.634ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'slaves/TDCchannels/PLLgen/pll_base_inst/CLKOUT4'
-  Total number of paths / destination ports: 9 / 2
+  Total number of paths / destination ports: 25 / 4
 -------------------------------------------------------------------------
-Offset:              5.466ns (Levels of Logic = 4)
-  Source:            slaves/TDCchannels/triggerCounter_7 (FF)
-  Destination:       TRIGGER (PAD)
+Offset:              5.503ns (Levels of Logic = 4)
+  Source:            slaves/TDCchannels/triggerCounter_1 (FF)
+  Destination:       trigger_diff_p (PAD)
   Source Clock:      slaves/TDCchannels/PLLgen/pll_base_inst/CLKOUT4 rising
 
-  Data Path: slaves/TDCchannels/triggerCounter_7 to TRIGGER
+  Data Path: slaves/TDCchannels/triggerCounter_1 to trigger_diff_p
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              3   0.447   0.879  triggerCounter_7 (triggerCounter_7)
+     FDR:C->Q              3   0.447   0.879  triggerCounter_1 (triggerCounter_1)
      LUT3:I0->O            1   0.205   0.580  _n0046_SW0 (N2)
-     LUT6:I5->O            1   0.205   0.579  _n0046 (TRIGGER)
+     LUT6:I5->O            2   0.205   0.616  _n0046 (TRIGGER)
      end scope: 'slaves/TDCchannels:TRIGGER'
      end scope: 'slaves:TRIGGER'
-     OBUF:I->O                 2.571          TRIGGER_OBUF (TRIGGER)
+     OBUFDS:I->O               2.571          output_bufferTRIGGERdiff (trigger_diff_p)
     ----------------------------------------
-    Total                      5.466ns (3.428ns logic, 2.038ns route)
-                                       (62.7% logic, 37.3% route)
+    Total                      5.503ns (3.428ns logic, 2.075ns route)
+                                       (62.3% logic, 37.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
@@ -3959,13 +3959,13 @@ sysclk          |    5.872|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 53.00 secs
-Total CPU time to Xst completion: 52.63 secs
+Total REAL time to Xst completion: 54.00 secs
+Total CPU time to Xst completion: 53.28 secs
  
 --> 
 
 
-Total memory usage is 608420 kilobytes
+Total memory usage is 608076 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  734 (   0 filtered)
