@@ -80,6 +80,33 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/dataChannel.v" Line 107: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 93: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 98: Result of <arg fmt="%d" index="1">27</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">26</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 107: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 108: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 111: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 113: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 115: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 117: Result of <arg fmt="%d" index="1">9</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 118: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">8</arg>-bit target.
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/registerInterface.v" Line 99: Signal &lt;<arg fmt="%s" index="1">myReg1</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 </msg>
 
@@ -119,7 +146,46 @@
 <msg type="warning" file="HDLCompiler" num="91" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/registerInterface.v" Line 111: Signal &lt;<arg fmt="%s" index="1">myReg13</arg>&gt; missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="604" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 82: Module instantiation should have an instance name
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 146: Assignment to <arg fmt="%s" index="1">myReg1</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 147: Assignment to <arg fmt="%s" index="1">myReg2</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 148: Assignment to <arg fmt="%s" index="1">myReg3</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 149: Assignment to <arg fmt="%s" index="1">myReg4</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 150: Assignment to <arg fmt="%s" index="1">myReg5</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 151: Assignment to <arg fmt="%s" index="1">myReg6</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 152: Assignment to <arg fmt="%s" index="1">myReg7</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 153: Assignment to <arg fmt="%s" index="1">myReg8</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 154: Assignment to <arg fmt="%s" index="1">myReg9</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 155: Assignment to <arg fmt="%s" index="1">myReg10</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 156: Assignment to <arg fmt="%s" index="1">myReg11</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 157: Assignment to <arg fmt="%s" index="1">myReg12</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 158: Assignment to <arg fmt="%s" index="1">myReg13</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="604" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 162: Module instantiation should have an instance name
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/SerialConfig.v" Line 81: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
@@ -143,7 +209,7 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/SerialConfig.v" Line 211: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">1</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 111: Result of <arg fmt="%d" index="1">24</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">23</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v" Line 191: Result of <arg fmt="%d" index="1">24</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">23</arg>-bit target.
 </msg>
 
 <msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/top_atlys.vhd</arg>&quot; line <arg fmt="%s" index="2">90</arg>: Output port &lt;<arg fmt="%s" index="3">hostbus_out_hostrddata</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">eth</arg>&gt; is unconnected or connected to loadless signal.
@@ -306,6 +372,45 @@
 </msg>
 
 <msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/timegen.v</arg>&quot; line <arg fmt="%s" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">full</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">hit_fifo</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg1</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg2</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg3</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg4</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg5</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg6</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg7</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg8</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg9</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg10</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg11</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg12</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/Administrators/jeffrey/xilinx/work_freqmode/source/I2C/i2c/I2CTest_top.v</arg>&quot; line <arg fmt="%s" index="2">138</arg>: Output port &lt;<arg fmt="%s" index="3">myReg13</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UCOMM</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">myReg13&lt;7:5&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -810,6 +915,9 @@
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">FSMstate_3</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SerialConfig</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">shiftregister_92</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">SerialConfig</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">rarp_req_block.req_end_0</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">udp_rarp_block</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -2528,10 +2636,10 @@
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">clean_block.clean_i_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">rx_ram_selector</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">prescaler_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">_i000001</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">prescaler_8</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">_i000032</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">prescaler_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">_i000001</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">prescaler_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">_i000032</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">write_data.shift_buf_9</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ARP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.

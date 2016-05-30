@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Apr 06 11:53:36 2016
+// Written by: Map P.20131013 on Mon May 30 13:30:19 2016
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -86,16 +86,17 @@ COMP "slaves/TDCchannels/dc1/TDCcore/hit_registers_L0<3>" LOCATE = SITE
 COMPGRP pblock_counter_ch1.SLICE = COMP
         "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180<2>" COMP
         "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0<1>" COMP
-        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK0_L0<2>";
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L0<2>";
 COMPGRP "pblock_counter_ch1.SLICE" LOCATE = SITE "SLICE_X46Y50:SLICE_X47Y55"
         LEVEL 4;
 COMPGRP L1buffers_ch1.SLICE = COMP
-        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1<3>" COMP
-        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1<2>";
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1<2>" COMP
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1<3>";
 COMPGRP "L1buffers_ch1.SLICE" LOCATE = SITE "SLICE_X48Y48:SLICE_X51Y55" LEVEL
         4;
-COMPGRP FSM_TDC1.SLICE = COMP "slaves/TDCchannels/dc1/TDCcore/valid_hit" COMP
-        "slaves/TDCchannels/dc1/TDCcore/coarse_time<2>" COMP
+COMPGRP FSM_TDC1.SLICE = COMP "slaves/TDCchannels/dc1/TDCcore/coarse_time<2>"
+        COMP "slaves/TDCchannels/dc1/TDCcore/valid_hit" COMP
+        "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded<1>" COMP
         "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd1" COMP
         "slaves/TDCchannels/dc1/TDCcore/coarse_time<1>";
 COMPGRP "FSM_TDC1.SLICE" LOCATE = SITE "SLICE_X52Y48:SLICE_X59Y55" SITE
@@ -8427,18 +8428,29 @@ TIMEGRP tnm_sysclk = BEL "clocks/rst" BEL "clocks/d17_d" PIN
         "clocks/clkdiv/cnt_24" BEL "clocks/clkdiv/cnt_25" BEL
         "clocks/clkdiv/cnt_26" BEL "clocks/clkdiv/cnt_27" BEL
         "clocks/clkdiv/reset_gen/SRL16E" BEL "clocks/Mshreg_nuke_d2" BEL
-        "clocks/nuke_d2" BEL "myprogrammer/commBusyCtr_0" BEL
-        "myprogrammer/commBusyCtr_1" BEL "myprogrammer/commBusyCtr_2" BEL
-        "myprogrammer/commBusyCtr_3" BEL "myprogrammer/commBusyCtr_4" BEL
-        "myprogrammer/commBusyCtr_5" BEL "myprogrammer/commBusyCtr_6" BEL
-        "myprogrammer/commBusyCtr_7" BEL "myprogrammer/commBusyCtr_8" BEL
-        "myprogrammer/commBusyCtr_9" BEL "myprogrammer/commBusyCtr_10" BEL
-        "myprogrammer/commBusyCtr_11" BEL "myprogrammer/commBusyCtr_12" BEL
-        "myprogrammer/commBusyCtr_13" BEL "myprogrammer/commBusyCtr_14" BEL
-        "myprogrammer/commBusyCtr_15" BEL "myprogrammer/commBusyCtr_16" BEL
-        "myprogrammer/commBusyCtr_17" BEL "myprogrammer/commBusyCtr_18" BEL
-        "myprogrammer/commBusyCtr_19" BEL "myprogrammer/commBusyCtr_20" BEL
-        "myprogrammer/commBusyCtr_21" BEL "myprogrammer/commBusyCtr_22" BEL
+        "clocks/nuke_d2" BEL "myprogrammer/startProgram" BEL
+        "myprogrammer/prescaleCounter_0" BEL "myprogrammer/prescaleCounter_1"
+        BEL "myprogrammer/prescaleCounter_2" BEL
+        "myprogrammer/prescaleCounter_3" BEL "myprogrammer/prescaleCounter_4"
+        BEL "myprogrammer/prescaleCounter_5" BEL
+        "myprogrammer/prescaleCounter_6" BEL "myprogrammer/prescaleCounter_7"
+        BEL "myprogrammer/prescaleCounter_8" BEL
+        "myprogrammer/prescaleCounter_9" BEL "myprogrammer/prescaleCounter_10"
+        BEL "myprogrammer/prescaleCounter_11" BEL
+        "myprogrammer/prescaleCounter_12" BEL
+        "myprogrammer/prescaleCounter_13" BEL
+        "myprogrammer/prescaleCounter_14" BEL
+        "myprogrammer/prescaleCounter_15" BEL
+        "myprogrammer/prescaleCounter_16" BEL
+        "myprogrammer/prescaleCounter_17" BEL
+        "myprogrammer/prescaleCounter_18" BEL
+        "myprogrammer/prescaleCounter_19" BEL
+        "myprogrammer/prescaleCounter_20" BEL
+        "myprogrammer/prescaleCounter_21" BEL
+        "myprogrammer/prescaleCounter_22" BEL
+        "myprogrammer/prescaleCounter_23" BEL
+        "myprogrammer/prescaleCounter_24" BEL
+        "myprogrammer/prescaleCounter_25" BEL
         "myprogrammer/UCOMM/u_i2cSlave/startEdgeDet" BEL
         "myprogrammer/UCOMM/u_i2cSlave/sclPipe_0" BEL
         "myprogrammer/UCOMM/u_i2cSlave/sclPipe_1" BEL
@@ -8633,126 +8645,125 @@ TIMEGRP tnm_sysclk = BEL "clocks/rst" BEL "clocks/d17_d" PIN
         "myprogrammer/UCOMM/u_registerInterface/myReg1_5" BEL
         "myprogrammer/UCOMM/u_registerInterface/myReg1_6" BEL
         "myprogrammer/UCOMM/u_registerInterface/myReg1_7" BEL
-        "myprogrammer/_i000001/FSMstate_0" BEL
-        "myprogrammer/_i000001/FSMstate_1" BEL
-        "myprogrammer/_i000001/FSMstate_2" BEL
-        "myprogrammer/_i000001/shiftregister_0" BEL
-        "myprogrammer/_i000001/shiftregister_1" BEL
-        "myprogrammer/_i000001/shiftregister_2" BEL
-        "myprogrammer/_i000001/shiftregister_3" BEL
-        "myprogrammer/_i000001/shiftregister_4" BEL
-        "myprogrammer/_i000001/shiftregister_5" BEL
-        "myprogrammer/_i000001/shiftregister_6" BEL
-        "myprogrammer/_i000001/shiftregister_7" BEL
-        "myprogrammer/_i000001/shiftregister_8" BEL
-        "myprogrammer/_i000001/shiftregister_9" BEL
-        "myprogrammer/_i000001/shiftregister_10" BEL
-        "myprogrammer/_i000001/shiftregister_11" BEL
-        "myprogrammer/_i000001/shiftregister_12" BEL
-        "myprogrammer/_i000001/shiftregister_13" BEL
-        "myprogrammer/_i000001/shiftregister_14" BEL
-        "myprogrammer/_i000001/shiftregister_15" BEL
-        "myprogrammer/_i000001/shiftregister_16" BEL
-        "myprogrammer/_i000001/shiftregister_17" BEL
-        "myprogrammer/_i000001/shiftregister_18" BEL
-        "myprogrammer/_i000001/shiftregister_19" BEL
-        "myprogrammer/_i000001/shiftregister_20" BEL
-        "myprogrammer/_i000001/shiftregister_21" BEL
-        "myprogrammer/_i000001/shiftregister_22" BEL
-        "myprogrammer/_i000001/shiftregister_23" BEL
-        "myprogrammer/_i000001/shiftregister_24" BEL
-        "myprogrammer/_i000001/shiftregister_25" BEL
-        "myprogrammer/_i000001/shiftregister_26" BEL
-        "myprogrammer/_i000001/shiftregister_27" BEL
-        "myprogrammer/_i000001/shiftregister_28" BEL
-        "myprogrammer/_i000001/shiftregister_29" BEL
-        "myprogrammer/_i000001/shiftregister_30" BEL
-        "myprogrammer/_i000001/shiftregister_31" BEL
-        "myprogrammer/_i000001/shiftregister_32" BEL
-        "myprogrammer/_i000001/shiftregister_33" BEL
-        "myprogrammer/_i000001/shiftregister_34" BEL
-        "myprogrammer/_i000001/shiftregister_35" BEL
-        "myprogrammer/_i000001/shiftregister_36" BEL
-        "myprogrammer/_i000001/shiftregister_37" BEL
-        "myprogrammer/_i000001/shiftregister_38" BEL
-        "myprogrammer/_i000001/shiftregister_39" BEL
-        "myprogrammer/_i000001/shiftregister_40" BEL
-        "myprogrammer/_i000001/shiftregister_41" BEL
-        "myprogrammer/_i000001/shiftregister_42" BEL
-        "myprogrammer/_i000001/shiftregister_43" BEL
-        "myprogrammer/_i000001/shiftregister_44" BEL
-        "myprogrammer/_i000001/shiftregister_45" BEL
-        "myprogrammer/_i000001/shiftregister_46" BEL
-        "myprogrammer/_i000001/shiftregister_47" BEL
-        "myprogrammer/_i000001/shiftregister_48" BEL
-        "myprogrammer/_i000001/shiftregister_49" BEL
-        "myprogrammer/_i000001/shiftregister_50" BEL
-        "myprogrammer/_i000001/shiftregister_51" BEL
-        "myprogrammer/_i000001/shiftregister_52" BEL
-        "myprogrammer/_i000001/shiftregister_53" BEL
-        "myprogrammer/_i000001/shiftregister_54" BEL
-        "myprogrammer/_i000001/shiftregister_55" BEL
-        "myprogrammer/_i000001/shiftregister_56" BEL
-        "myprogrammer/_i000001/shiftregister_57" BEL
-        "myprogrammer/_i000001/shiftregister_58" BEL
-        "myprogrammer/_i000001/shiftregister_59" BEL
-        "myprogrammer/_i000001/shiftregister_60" BEL
-        "myprogrammer/_i000001/shiftregister_61" BEL
-        "myprogrammer/_i000001/shiftregister_62" BEL
-        "myprogrammer/_i000001/shiftregister_63" BEL
-        "myprogrammer/_i000001/shiftregister_64" BEL
-        "myprogrammer/_i000001/shiftregister_65" BEL
-        "myprogrammer/_i000001/shiftregister_66" BEL
-        "myprogrammer/_i000001/shiftregister_67" BEL
-        "myprogrammer/_i000001/shiftregister_68" BEL
-        "myprogrammer/_i000001/shiftregister_69" BEL
-        "myprogrammer/_i000001/shiftregister_70" BEL
-        "myprogrammer/_i000001/shiftregister_71" BEL
-        "myprogrammer/_i000001/shiftregister_72" BEL
-        "myprogrammer/_i000001/shiftregister_73" BEL
-        "myprogrammer/_i000001/shiftregister_74" BEL
-        "myprogrammer/_i000001/shiftregister_75" BEL
-        "myprogrammer/_i000001/shiftregister_76" BEL
-        "myprogrammer/_i000001/shiftregister_77" BEL
-        "myprogrammer/_i000001/shiftregister_78" BEL
-        "myprogrammer/_i000001/shiftregister_79" BEL
-        "myprogrammer/_i000001/shiftregister_80" BEL
-        "myprogrammer/_i000001/shiftregister_81" BEL
-        "myprogrammer/_i000001/shiftregister_82" BEL
-        "myprogrammer/_i000001/shiftregister_83" BEL
-        "myprogrammer/_i000001/shiftregister_84" BEL
-        "myprogrammer/_i000001/shiftregister_85" BEL
-        "myprogrammer/_i000001/shiftregister_86" BEL
-        "myprogrammer/_i000001/shiftregister_87" BEL
-        "myprogrammer/_i000001/shiftregister_88" BEL
-        "myprogrammer/_i000001/shiftregister_89" BEL
-        "myprogrammer/_i000001/shiftregister_90" BEL
-        "myprogrammer/_i000001/shiftregister_91" BEL
-        "myprogrammer/_i000001/shiftregister_92" BEL
-        "myprogrammer/_i000001/sda" BEL "myprogrammer/_i000001/shiftCtr_0" BEL
-        "myprogrammer/_i000001/shiftCtr_1" BEL
-        "myprogrammer/_i000001/shiftCtr_2" BEL
-        "myprogrammer/_i000001/shiftCtr_3" BEL
-        "myprogrammer/_i000001/shiftCtr_4" BEL
-        "myprogrammer/_i000001/shiftCtr_5" BEL
-        "myprogrammer/_i000001/shiftCtr_6" BEL
-        "myprogrammer/_i000001/shiftCtr_7" BEL
-        "myprogrammer/_i000001/prescaler_0" BEL
-        "myprogrammer/_i000001/prescaler_1" BEL
-        "myprogrammer/_i000001/prescaler_2" BEL
-        "myprogrammer/_i000001/prescaler_3" BEL
-        "myprogrammer/_i000001/prescaler_4" BEL
-        "myprogrammer/_i000001/prescaler_5" BEL
-        "myprogrammer/_i000001/prescaler_6" BEL
-        "myprogrammer/_i000001/prescaler_7" BEL "myprogrammer/_i000001/sck"
-        BEL "myprogrammer/_i000001/Result<0>_FRB" BEL
-        "myprogrammer/_i000001/Result<1>_FRB" BEL
-        "myprogrammer/_i000001/Result<2>_FRB" BEL
-        "myprogrammer/_i000001/Result<3>_FRB" BEL
-        "myprogrammer/_i000001/Result<4>_FRB" BEL
-        "myprogrammer/_i000001/Result<5>_FRB" BEL
-        "myprogrammer/_i000001/Result<6>_FRB" BEL
-        "myprogrammer/_i000001/Result<7>_FRB";
+        "myprogrammer/_i000032/FSMstate_0" BEL
+        "myprogrammer/_i000032/FSMstate_1" BEL
+        "myprogrammer/_i000032/FSMstate_2" BEL
+        "myprogrammer/_i000032/shiftregister_0" BEL
+        "myprogrammer/_i000032/shiftregister_1" BEL
+        "myprogrammer/_i000032/shiftregister_2" BEL
+        "myprogrammer/_i000032/shiftregister_3" BEL
+        "myprogrammer/_i000032/shiftregister_4" BEL
+        "myprogrammer/_i000032/shiftregister_5" BEL
+        "myprogrammer/_i000032/shiftregister_6" BEL
+        "myprogrammer/_i000032/shiftregister_7" BEL
+        "myprogrammer/_i000032/shiftregister_8" BEL
+        "myprogrammer/_i000032/shiftregister_9" BEL
+        "myprogrammer/_i000032/shiftregister_10" BEL
+        "myprogrammer/_i000032/shiftregister_11" BEL
+        "myprogrammer/_i000032/shiftregister_12" BEL
+        "myprogrammer/_i000032/shiftregister_13" BEL
+        "myprogrammer/_i000032/shiftregister_14" BEL
+        "myprogrammer/_i000032/shiftregister_15" BEL
+        "myprogrammer/_i000032/shiftregister_16" BEL
+        "myprogrammer/_i000032/shiftregister_17" BEL
+        "myprogrammer/_i000032/shiftregister_18" BEL
+        "myprogrammer/_i000032/shiftregister_19" BEL
+        "myprogrammer/_i000032/shiftregister_20" BEL
+        "myprogrammer/_i000032/shiftregister_21" BEL
+        "myprogrammer/_i000032/shiftregister_22" BEL
+        "myprogrammer/_i000032/shiftregister_23" BEL
+        "myprogrammer/_i000032/shiftregister_24" BEL
+        "myprogrammer/_i000032/shiftregister_25" BEL
+        "myprogrammer/_i000032/shiftregister_26" BEL
+        "myprogrammer/_i000032/shiftregister_27" BEL
+        "myprogrammer/_i000032/shiftregister_28" BEL
+        "myprogrammer/_i000032/shiftregister_29" BEL
+        "myprogrammer/_i000032/shiftregister_30" BEL
+        "myprogrammer/_i000032/shiftregister_31" BEL
+        "myprogrammer/_i000032/shiftregister_32" BEL
+        "myprogrammer/_i000032/shiftregister_33" BEL
+        "myprogrammer/_i000032/shiftregister_34" BEL
+        "myprogrammer/_i000032/shiftregister_35" BEL
+        "myprogrammer/_i000032/shiftregister_36" BEL
+        "myprogrammer/_i000032/shiftregister_37" BEL
+        "myprogrammer/_i000032/shiftregister_38" BEL
+        "myprogrammer/_i000032/shiftregister_39" BEL
+        "myprogrammer/_i000032/shiftregister_40" BEL
+        "myprogrammer/_i000032/shiftregister_41" BEL
+        "myprogrammer/_i000032/shiftregister_42" BEL
+        "myprogrammer/_i000032/shiftregister_43" BEL
+        "myprogrammer/_i000032/shiftregister_44" BEL
+        "myprogrammer/_i000032/shiftregister_45" BEL
+        "myprogrammer/_i000032/shiftregister_46" BEL
+        "myprogrammer/_i000032/shiftregister_47" BEL
+        "myprogrammer/_i000032/shiftregister_48" BEL
+        "myprogrammer/_i000032/shiftregister_49" BEL
+        "myprogrammer/_i000032/shiftregister_50" BEL
+        "myprogrammer/_i000032/shiftregister_51" BEL
+        "myprogrammer/_i000032/shiftregister_52" BEL
+        "myprogrammer/_i000032/shiftregister_53" BEL
+        "myprogrammer/_i000032/shiftregister_54" BEL
+        "myprogrammer/_i000032/shiftregister_55" BEL
+        "myprogrammer/_i000032/shiftregister_56" BEL
+        "myprogrammer/_i000032/shiftregister_57" BEL
+        "myprogrammer/_i000032/shiftregister_58" BEL
+        "myprogrammer/_i000032/shiftregister_59" BEL
+        "myprogrammer/_i000032/shiftregister_60" BEL
+        "myprogrammer/_i000032/shiftregister_61" BEL
+        "myprogrammer/_i000032/shiftregister_62" BEL
+        "myprogrammer/_i000032/shiftregister_63" BEL
+        "myprogrammer/_i000032/shiftregister_64" BEL
+        "myprogrammer/_i000032/shiftregister_65" BEL
+        "myprogrammer/_i000032/shiftregister_66" BEL
+        "myprogrammer/_i000032/shiftregister_67" BEL
+        "myprogrammer/_i000032/shiftregister_68" BEL
+        "myprogrammer/_i000032/shiftregister_69" BEL
+        "myprogrammer/_i000032/shiftregister_70" BEL
+        "myprogrammer/_i000032/shiftregister_71" BEL
+        "myprogrammer/_i000032/shiftregister_72" BEL
+        "myprogrammer/_i000032/shiftregister_73" BEL
+        "myprogrammer/_i000032/shiftregister_74" BEL
+        "myprogrammer/_i000032/shiftregister_75" BEL
+        "myprogrammer/_i000032/shiftregister_76" BEL
+        "myprogrammer/_i000032/shiftregister_77" BEL
+        "myprogrammer/_i000032/shiftregister_78" BEL
+        "myprogrammer/_i000032/shiftregister_79" BEL
+        "myprogrammer/_i000032/shiftregister_80" BEL
+        "myprogrammer/_i000032/shiftregister_81" BEL
+        "myprogrammer/_i000032/shiftregister_82" BEL
+        "myprogrammer/_i000032/shiftregister_83" BEL
+        "myprogrammer/_i000032/shiftregister_84" BEL
+        "myprogrammer/_i000032/shiftregister_85" BEL
+        "myprogrammer/_i000032/shiftregister_86" BEL
+        "myprogrammer/_i000032/shiftregister_87" BEL
+        "myprogrammer/_i000032/shiftregister_88" BEL
+        "myprogrammer/_i000032/shiftregister_89" BEL
+        "myprogrammer/_i000032/shiftregister_90" BEL
+        "myprogrammer/_i000032/shiftregister_91" BEL
+        "myprogrammer/_i000032/sda" BEL "myprogrammer/_i000032/shiftCtr_0" BEL
+        "myprogrammer/_i000032/shiftCtr_1" BEL
+        "myprogrammer/_i000032/shiftCtr_2" BEL
+        "myprogrammer/_i000032/shiftCtr_3" BEL
+        "myprogrammer/_i000032/shiftCtr_4" BEL
+        "myprogrammer/_i000032/shiftCtr_5" BEL
+        "myprogrammer/_i000032/shiftCtr_6" BEL
+        "myprogrammer/_i000032/shiftCtr_7" BEL
+        "myprogrammer/_i000032/prescaler_0" BEL
+        "myprogrammer/_i000032/prescaler_1" BEL
+        "myprogrammer/_i000032/prescaler_2" BEL
+        "myprogrammer/_i000032/prescaler_3" BEL
+        "myprogrammer/_i000032/prescaler_4" BEL
+        "myprogrammer/_i000032/prescaler_5" BEL
+        "myprogrammer/_i000032/prescaler_6" BEL
+        "myprogrammer/_i000032/prescaler_7" BEL "myprogrammer/_i000032/sck"
+        BEL "myprogrammer/_i000032/Result<0>_FRB" BEL
+        "myprogrammer/_i000032/Result<1>_FRB" BEL
+        "myprogrammer/_i000032/Result<2>_FRB" BEL
+        "myprogrammer/_i000032/Result<3>_FRB" BEL
+        "myprogrammer/_i000032/Result<4>_FRB" BEL
+        "myprogrammer/_i000032/Result<5>_FRB" BEL
+        "myprogrammer/_i000032/Result<6>_FRB" BEL
+        "myprogrammer/_i000032/Result<7>_FRB" BEL "myprogrammer/configsel";
 PIN ipbus/udp_if/ipbus_tx_ram/Mram_ram2_pins<26> = BEL
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram2" PINNAME CLKA;
 PIN ipbus/udp_if/ipbus_tx_ram/Mram_ram1_pins<26> = BEL
