@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/Administrators/jeffrey/xilinx/work_freqmode/tester_SEUcounter_isim_beh.exe" -prj "/home/Administrators/jeffrey/xilinx/work_freqmode/tester_SEUcounter_beh.prj" "work.tester_SEUcounter" "work.glbl" 

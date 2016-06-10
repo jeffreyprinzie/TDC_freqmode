@@ -30,7 +30,10 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/par.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_2"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_3"/>
@@ -40,6 +43,11 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="slaves.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="slaves.xst"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="source/TDC/ipcore_dir/coregen.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="test_datagen_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tester_SEUcounter_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tester_SEUcounter_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tester_SEUcounter_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tester_SEUcounter_stx_beh.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BITGEN_REPORT" xil_pn:name="top.bgn" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_BIT" xil_pn:name="top.bit" xil_pn:subbranch="FPGAConfiguration"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="top.bld"/>
@@ -82,11 +90,205 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1465565327" xil_pn:name="TRANEXT_compLibraries_FPGA" xil_pn:prop_ck="1321705353062746806" xil_pn:start_ts="1465565327">
+      <status xil_pn:value="FailedRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565396" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1465565396">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1465566004" xil_pn:in_ck="-157685499678577579" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1465566004">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="../ipbus/firmware/ethernet/hdl/emac_hostbus_decl.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ethernet/hdl/eth_s6_gmii.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/example_designs/hdl/clock_div.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/example_designs/hdl/clocks_s6_extphy_100MHz.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_ctrl.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_fabric.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_package.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_trans_decl.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/stretcher.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/trans_arb.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor_cfg.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor_if.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor_sm.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_buffer_selector.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_arp.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_payload.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_ping.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_resend.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_status.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_byte_sum.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_clock_crossing_if.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_do_rx_reset.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_dualportram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_dualportram_rx.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_dualportram_tx.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_if_flat.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_ipaddr_block.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_packet_parser.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rarp_block.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rxram_mux.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rxram_shim.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rxtransactor_if_simple.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_status_buffer.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_tx_mux.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_txtransactor_if_simple.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_ctrlreg.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_dpram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_pkt_ctr.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_ram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_reg.vhd"/>
+      <outfile xil_pn:name="SEUcounter.v"/>
+      <outfile xil_pn:name="TDCslave.v"/>
+      <outfile xil_pn:name="dataChannel.v"/>
+      <outfile xil_pn:name="rammgmt.v"/>
+      <outfile xil_pn:name="source/I2C/SerialConfig.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/I2CTest_top.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/i2cSlave.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/i2cSlaveTop.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/i2cSlave_define.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/serialInterface.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/timescale.v"/>
+      <outfile xil_pn:name="source/I2C/registerInterface.v"/>
+      <outfile xil_pn:name="source/ipbus_addr_decode.vhd"/>
+      <outfile xil_pn:name="source/slaves_custom.vhd"/>
+      <outfile xil_pn:name="test_datagen.v"/>
+      <outfile xil_pn:name="tester_SEUcounter.v"/>
+      <outfile xil_pn:name="tester_timegen.v"/>
+      <outfile xil_pn:name="timegen.v"/>
+      <outfile xil_pn:name="top_atlys.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565436" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-1444198382958477094" xil_pn:start_ts="1465565436">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565437" xil_pn:in_ck="152518337834" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7294528616809204888" xil_pn:start_ts="1465565436">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565437" xil_pn:in_ck="-2942970806010097472" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="5401955865550068452" xil_pn:start_ts="1465565437">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="ipcore_dir/PLL.v"/>
+      <outfile xil_pn:name="ipcore_dir/mac_fifo_axi4.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/mac_fifo_axi4.v"/>
+      <outfile xil_pn:name="ipcore_dir/tri_mode_eth_mac_v5_4.ngc"/>
+      <outfile xil_pn:name="ipcore_dir/tri_mode_eth_mac_v5_4.v"/>
+      <outfile xil_pn:name="source/TDC/ipcore_dir/hitFIFO.ngc"/>
+      <outfile xil_pn:name="source/TDC/ipcore_dir/hitFIFO.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565437" xil_pn:in_ck="3122655046821630725" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1465565437">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="../ipbus/firmware/ethernet/hdl/emac_hostbus_decl.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ethernet/hdl/eth_s6_gmii.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/example_designs/hdl/clock_div.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/example_designs/hdl/clocks_s6_extphy_100MHz.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_ctrl.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_fabric.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_package.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/ipbus_trans_decl.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/stretcher.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/trans_arb.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor_cfg.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor_if.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/transactor_sm.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_buffer_selector.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_arp.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_payload.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_ping.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_resend.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_build_status.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_byte_sum.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_clock_crossing_if.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_do_rx_reset.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_dualportram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_dualportram_rx.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_dualportram_tx.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_if_flat.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_ipaddr_block.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_packet_parser.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rarp_block.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rxram_mux.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rxram_shim.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_rxtransactor_if_simple.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_status_buffer.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_tx_mux.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/ipbus_core/hdl/udp_txtransactor_if_simple.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_ctrlreg.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_dpram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_peephole_ram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_pkt_ctr.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_ram.vhd"/>
+      <outfile xil_pn:name="../ipbus/firmware/slaves/hdl/ipbus_reg.vhd"/>
+      <outfile xil_pn:name="SEUcounter.v"/>
+      <outfile xil_pn:name="TDCslave.v"/>
+      <outfile xil_pn:name="dataChannel.v"/>
+      <outfile xil_pn:name="ipcore_dir/PLL.v"/>
+      <outfile xil_pn:name="ipcore_dir/mac_fifo_axi4.v"/>
+      <outfile xil_pn:name="ipcore_dir/tri_mode_eth_mac_v5_4.v"/>
+      <outfile xil_pn:name="rammgmt.v"/>
+      <outfile xil_pn:name="source/I2C/SerialConfig.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/I2CTest_top.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/i2cSlave.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/i2cSlaveTop.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/i2cSlave_define.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/serialInterface.v"/>
+      <outfile xil_pn:name="source/I2C/i2c/timescale.v"/>
+      <outfile xil_pn:name="source/I2C/registerInterface.v"/>
+      <outfile xil_pn:name="source/TDC/ipcore_dir/hitFIFO.v"/>
+      <outfile xil_pn:name="source/ipbus_addr_decode.vhd"/>
+      <outfile xil_pn:name="source/slaves_custom.vhd"/>
+      <outfile xil_pn:name="test_datagen.v"/>
+      <outfile xil_pn:name="tester_SEUcounter.v"/>
+      <outfile xil_pn:name="tester_timegen.v"/>
+      <outfile xil_pn:name="timegen.v"/>
+      <outfile xil_pn:name="top_atlys.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565440" xil_pn:in_ck="3122655046821630725" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4126033509836899597" xil_pn:start_ts="1465565437">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="tester_SEUcounter_beh.prj"/>
+      <outfile xil_pn:name="tester_SEUcounter_isim_beh.exe"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1465565440" xil_pn:in_ck="-3841518448693385294" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6272586386301500490" xil_pn:start_ts="1465565440">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="tester_SEUcounter_isim_beh.wdb"/>
+    </transform>
     <transform xil_pn:end_ts="1459251833" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1459251833">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -122,7 +324,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1464607707" xil_pn:in_ck="-5944656112850392627" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-2040626254990841635" xil_pn:start_ts="1464607652">
+    <transform xil_pn:end_ts="1465569396" xil_pn:in_ck="3667087798555153982" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-2040626254990841635" xil_pn:start_ts="1465569337">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -140,11 +342,11 @@
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
     </transform>
-    <transform xil_pn:end_ts="1459936297" xil_pn:in_ck="-4545400700704356612" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="671693640407403424" xil_pn:start_ts="1459936297">
+    <transform xil_pn:end_ts="1465569987" xil_pn:in_ck="-4545400700704356612" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="671693640407403424" xil_pn:start_ts="1465569987">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1464607716" xil_pn:in_ck="4206093313475485485" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5969376218124498651" xil_pn:start_ts="1464607707">
+    <transform xil_pn:end_ts="1465569997" xil_pn:in_ck="4206093313475485485" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-5969376218124498651" xil_pn:start_ts="1465569987">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -154,10 +356,12 @@
       <outfile xil_pn:name="top.ngd"/>
       <outfile xil_pn:name="top_ngdbuild.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1464607821" xil_pn:in_ck="1082481850636908979" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="5610395431785270129" xil_pn:start_ts="1464607716">
+    <transform xil_pn:end_ts="1465570124" xil_pn:in_ck="1082481850636908979" xil_pn:name="TRANEXT_map_spartan6" xil_pn:prop_ck="5610395431785270129" xil_pn:start_ts="1465569997">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
       <outfile xil_pn:name="top.pcf"/>
       <outfile xil_pn:name="top_map.map"/>
@@ -168,7 +372,7 @@
       <outfile xil_pn:name="top_summary.xml"/>
       <outfile xil_pn:name="top_usage.xml"/>
     </transform>
-    <transform xil_pn:end_ts="1464607896" xil_pn:in_ck="-7854786334589343156" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="7846039340612803429" xil_pn:start_ts="1464607821">
+    <transform xil_pn:end_ts="1465570203" xil_pn:in_ck="-7854786334589343156" xil_pn:name="TRANEXT_par_spartan6" xil_pn:prop_ck="7846039340612803429" xil_pn:start_ts="1465570124">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -183,7 +387,7 @@
       <outfile xil_pn:name="top_pad.txt"/>
       <outfile xil_pn:name="top_par.xrpt"/>
     </transform>
-    <transform xil_pn:end_ts="1464607916" xil_pn:in_ck="154288912438" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1464607896">
+    <transform xil_pn:end_ts="1465570225" xil_pn:in_ck="154288912438" xil_pn:name="TRANEXT_bitFile_spartan6" xil_pn:prop_ck="5341574683187206424" xil_pn:start_ts="1465570205">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -230,7 +434,7 @@
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="InputRemoved"/>
     </transform>
-    <transform xil_pn:end_ts="1464607896" xil_pn:in_ck="1082481850636908847" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1464607885">
+    <transform xil_pn:end_ts="1465570203" xil_pn:in_ck="1082481850636908847" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1465570191">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

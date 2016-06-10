@@ -1,0 +1,28 @@
+Command line:
+   tester_SEUcounter_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  46968
+
+Fri Jun 10 15:54:11 2016
+
+
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 197.075 Meg
+
+ Total Signals          : 16
+ Total Nets             : 25
+ Total Signal Drivers   : 8
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 14
+ Total Traceable Variables  : 26
+ Total Scalar Nets and Variables : 124
+
+ Total Simulation Time: 0.04 sec
+
+ Current Memory Usage: 274.674 Meg
+
+Fri Jun 10 16:46:11 2016
+

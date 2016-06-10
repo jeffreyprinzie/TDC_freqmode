@@ -41,7 +41,8 @@ entity top is port(
 	sdai2c : inout std_logic;
 	scli2c : in std_logic;
 	sda,sck,reset,scapt,commBusy : out std_logic;
-	TRIGGER : out std_logic
+	TRIGGER : out std_logic;
+	SEUcalin : in std_logic
 	);
 end top;
 
@@ -159,7 +160,8 @@ begin
 		--hit2=>hit2,
 		handshakeleds=>handshakeleds,
 		REFPLL=>REFPLL,
-		TRIGGER=>TRIGGER_i
+		TRIGGER=>TRIGGER_i,
+		SEUcalin=>SEUcalin
 	);
 	
 	TRIGGER<=TRIGGER_i;

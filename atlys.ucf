@@ -11,6 +11,8 @@ NET "scli2c" LOC = N11;
 NET "commBusy" LOC = N12;
 NET "TRIGGER" LOC = U13;
 
+NET "SEUcalin" LOC = U15;
+
 NET "scapt" IOSTANDARD = LVCMOS33;
 NET "reset" IOSTANDARD = LVCMOS33;
 NET "sck" IOSTANDARD = LVCMOS33;
@@ -19,6 +21,7 @@ NET "sdai2c" IOSTANDARD = LVCMOS33;
 NET "scli2c" IOSTANDARD = LVCMOS33;
 NET "commBusy" IOSTANDARD = LVCMOS33;
 NET "TRIGGER" IOSTANDARD = LVCMOS33;
+NET "SEUcalin" IOSTANDARD = LVCMOS33;
 
 
 NET "handshakeleds[2]" IOSTANDARD = LVCMOS33;
@@ -87,7 +90,7 @@ TIMESPEC TS_tig_125_ipb = FROM "tnm_clk125" TO "tnm_ipb_clk" TIG ;
 
 NET "clocks/rst" TIG;
 NET "clocks/nuke_i" TIG;
-
+NET "SEUcalin" TIG;
 
 
 TIMEGRP TG_gmii_tx =   PADS("gmii_tx*");

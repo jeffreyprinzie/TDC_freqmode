@@ -1,5 +1,5 @@
-set -tmpdir "/home/jeffrey/projects/work_freqmode/xst/projnav.tmp"
-set -xsthdpdir "/home/jeffrey/projects/work_freqmode/xst"
+set -tmpdir "/home/Administrators/jeffrey/xilinx/work_freqmode/xst/projnav.tmp"
+set -xsthdpdir "/home/Administrators/jeffrey/xilinx/work_freqmode/xst"
 run -compileonly yes
 -p xc6slx45-3-csg324
 -top slaves

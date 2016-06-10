@@ -1,11 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon May 30 13:30:19 2016
+// Written by: Map P.20131013 on Fri Jun 10 16:48:41 2016
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "TRIGGER" LOCATE = SITE "U13" LEVEL 1;
 COMP "sda" LOCATE = SITE "P11" LEVEL 1;
 COMP "sck" LOCATE = SITE "N10" LEVEL 1;
+COMP "SEUcalin" LOCATE = SITE "U15" LEVEL 1;
 COMP "trigger_diff_n" LOCATE = SITE "V10" LEVEL 1;
 COMP "trigger_diff_p" LOCATE = SITE "U10" LEVEL 1;
 COMP "sdai2c" LOCATE = SITE "M11" LEVEL 1;
@@ -90,14 +91,14 @@ COMPGRP pblock_counter_ch1.SLICE = COMP
 COMPGRP "pblock_counter_ch1.SLICE" LOCATE = SITE "SLICE_X46Y50:SLICE_X47Y55"
         LEVEL 4;
 COMPGRP L1buffers_ch1.SLICE = COMP
-        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1<2>" COMP
-        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1<3>";
+        "slaves/TDCchannels/dc1/TDCcore/hit_registers_L1<3>" COMP
+        "slaves/TDCchannels/dc1/TDCcore/counter_val_CK180_L1<2>";
 COMPGRP "L1buffers_ch1.SLICE" LOCATE = SITE "SLICE_X48Y48:SLICE_X51Y55" LEVEL
         4;
-COMPGRP FSM_TDC1.SLICE = COMP "slaves/TDCchannels/dc1/TDCcore/coarse_time<2>"
-        COMP "slaves/TDCchannels/dc1/TDCcore/valid_hit" COMP
+COMPGRP FSM_TDC1.SLICE = COMP
         "slaves/TDCchannels/dc1/TDCcore/fine_time_decoded<1>" COMP
         "slaves/TDCchannels/dc1/TDCcore/FSMstate_FSM_FFd1" COMP
+        "slaves/TDCchannels/dc1/TDCcore/coarse_time<2>" COMP
         "slaves/TDCchannels/dc1/TDCcore/coarse_time<1>";
 COMPGRP "FSM_TDC1.SLICE" LOCATE = SITE "SLICE_X52Y48:SLICE_X59Y55" SITE
         "SLICE_X30Y48:SLICE_X45Y55" LEVEL 4;
@@ -3590,8 +3591,6 @@ TIMEGRP tnm_clk125 = BEL "eth/gmii_tx_er" BEL "eth/gmii_txd_0" BEL
         "ipbus/udp_if/status_buffer/header_block.next_pkt_id_int_13" BEL
         "ipbus/udp_if/status_buffer/header_block.next_pkt_id_int_14" BEL
         "ipbus/udp_if/status_buffer/header_block.next_pkt_id_int_15" BEL
-        "ipbus/udp_if/status_buffer/history_block.event_pending" BEL
-        "ipbus/udp_if/status_buffer/ready" BEL
         "ipbus/udp_if/status_buffer/history_block.event_data_0" BEL
         "ipbus/udp_if/status_buffer/history_block.event_data_1" BEL
         "ipbus/udp_if/status_buffer/history_block.event_data_2" BEL
@@ -3606,6 +3605,13 @@ TIMEGRP tnm_clk125 = BEL "eth/gmii_tx_er" BEL "eth/gmii_txd_0" BEL
         "ipbus/udp_if/status_buffer/history_block.async_payload_1" BEL
         "ipbus/udp_if/status_buffer/history_block.async_payload_2" BEL
         "ipbus/udp_if/status_buffer/history_block.async_payload_4" BEL
+        "ipbus/udp_if/status_buffer/tick_0" BEL
+        "ipbus/udp_if/status_buffer/tick_1" BEL
+        "ipbus/udp_if/status_buffer/async_event" BEL
+        "ipbus/udp_if/status_buffer/async_history_block.tx_error" BEL
+        "ipbus/udp_if/status_buffer/async_history_block.send" BEL
+        "ipbus/udp_if/status_buffer/async_history_block.tx_send" BEL
+        "ipbus/udp_if/status_buffer/history_block.async_pending" BEL
         "ipbus/udp_if/status_buffer/history_0" BEL
         "ipbus/udp_if/status_buffer/history_1" BEL
         "ipbus/udp_if/status_buffer/history_2" BEL
@@ -3718,13 +3724,8 @@ TIMEGRP tnm_clk125 = BEL "eth/gmii_tx_er" BEL "eth/gmii_txd_0" BEL
         "ipbus/udp_if/status_buffer/history_124" BEL
         "ipbus/udp_if/status_buffer/history_126" BEL
         "ipbus/udp_if/status_buffer/history_127" BEL
-        "ipbus/udp_if/status_buffer/tick_0" BEL
-        "ipbus/udp_if/status_buffer/tick_1" BEL
-        "ipbus/udp_if/status_buffer/async_event" BEL
-        "ipbus/udp_if/status_buffer/async_history_block.tx_error" BEL
-        "ipbus/udp_if/status_buffer/async_history_block.send" BEL
-        "ipbus/udp_if/status_buffer/async_history_block.tx_send" BEL
-        "ipbus/udp_if/status_buffer/history_block.async_pending" BEL
+        "ipbus/udp_if/status_buffer/history_block.event_pending" BEL
+        "ipbus/udp_if/status_buffer/ready" BEL
         "ipbus/udp_if/rx_reset_block/rx_reset_buf.reset_buf_0" BEL
         "ipbus/udp_if/rx_reset_block/rx_reset_buf.reset_buf_1" BEL
         "ipbus/udp_if/rx_reset_block/rx_reset_buf.reset_buf_2" BEL
@@ -7443,8 +7444,6 @@ TIMEGRP clocks_clk_125_i = BEL "eth/gmii_tx_er" BEL "eth/gmii_txd_0" BEL
         "ipbus/udp_if/status_buffer/header_block.next_pkt_id_int_13" BEL
         "ipbus/udp_if/status_buffer/header_block.next_pkt_id_int_14" BEL
         "ipbus/udp_if/status_buffer/header_block.next_pkt_id_int_15" BEL
-        "ipbus/udp_if/status_buffer/history_block.event_pending" BEL
-        "ipbus/udp_if/status_buffer/ready" BEL
         "ipbus/udp_if/status_buffer/history_block.event_data_0" BEL
         "ipbus/udp_if/status_buffer/history_block.event_data_1" BEL
         "ipbus/udp_if/status_buffer/history_block.event_data_2" BEL
@@ -7459,6 +7458,13 @@ TIMEGRP clocks_clk_125_i = BEL "eth/gmii_tx_er" BEL "eth/gmii_txd_0" BEL
         "ipbus/udp_if/status_buffer/history_block.async_payload_1" BEL
         "ipbus/udp_if/status_buffer/history_block.async_payload_2" BEL
         "ipbus/udp_if/status_buffer/history_block.async_payload_4" BEL
+        "ipbus/udp_if/status_buffer/tick_0" BEL
+        "ipbus/udp_if/status_buffer/tick_1" BEL
+        "ipbus/udp_if/status_buffer/async_event" BEL
+        "ipbus/udp_if/status_buffer/async_history_block.tx_error" BEL
+        "ipbus/udp_if/status_buffer/async_history_block.send" BEL
+        "ipbus/udp_if/status_buffer/async_history_block.tx_send" BEL
+        "ipbus/udp_if/status_buffer/history_block.async_pending" BEL
         "ipbus/udp_if/status_buffer/history_0" BEL
         "ipbus/udp_if/status_buffer/history_1" BEL
         "ipbus/udp_if/status_buffer/history_2" BEL
@@ -7571,13 +7577,8 @@ TIMEGRP clocks_clk_125_i = BEL "eth/gmii_tx_er" BEL "eth/gmii_txd_0" BEL
         "ipbus/udp_if/status_buffer/history_124" BEL
         "ipbus/udp_if/status_buffer/history_126" BEL
         "ipbus/udp_if/status_buffer/history_127" BEL
-        "ipbus/udp_if/status_buffer/tick_0" BEL
-        "ipbus/udp_if/status_buffer/tick_1" BEL
-        "ipbus/udp_if/status_buffer/async_event" BEL
-        "ipbus/udp_if/status_buffer/async_history_block.tx_error" BEL
-        "ipbus/udp_if/status_buffer/async_history_block.send" BEL
-        "ipbus/udp_if/status_buffer/async_history_block.tx_send" BEL
-        "ipbus/udp_if/status_buffer/history_block.async_pending" BEL
+        "ipbus/udp_if/status_buffer/history_block.event_pending" BEL
+        "ipbus/udp_if/status_buffer/ready" BEL
         "ipbus/udp_if/rx_reset_block/rx_reset_buf.reset_buf_0" BEL
         "ipbus/udp_if/rx_reset_block/rx_reset_buf.reset_buf_1" BEL
         "ipbus/udp_if/rx_reset_block/rx_reset_buf.reset_buf_2" BEL
@@ -8764,6 +8765,8 @@ TIMEGRP tnm_sysclk = BEL "clocks/rst" BEL "clocks/d17_d" PIN
         "myprogrammer/_i000032/Result<5>_FRB" BEL
         "myprogrammer/_i000032/Result<6>_FRB" BEL
         "myprogrammer/_i000032/Result<7>_FRB" BEL "myprogrammer/configsel";
+PIN slaves/RAM2/Mram_ram_pins<19> = BEL "slaves/RAM2/Mram_ram" PINNAME CLKB;
+PIN slaves/RAM1/Mram_ram_pins<19> = BEL "slaves/RAM1/Mram_ram" PINNAME CLKB;
 PIN ipbus/udp_if/ipbus_tx_ram/Mram_ram2_pins<26> = BEL
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram2" PINNAME CLKA;
 PIN ipbus/udp_if/ipbus_tx_ram/Mram_ram1_pins<26> = BEL
@@ -8828,9 +8831,276 @@ PIN ipbus/udp_if/ipbus_rx_ram/Mram_ram43_pins<27> = BEL
         "ipbus/udp_if/ipbus_rx_ram/Mram_ram43" PINNAME CLKB;
 PIN ipbus/udp_if/ipbus_rx_ram/Mram_ram44_pins<27> = BEL
         "ipbus/udp_if/ipbus_rx_ram/Mram_ram44" PINNAME CLKB;
-PIN slaves/RAM2/Mram_ram_pins<19> = BEL "slaves/RAM2/Mram_ram" PINNAME CLKB;
-PIN slaves/RAM1/Mram_ram_pins<19> = BEL "slaves/RAM1/Mram_ram" PINNAME CLKB;
-TIMEGRP tnm_ipb_clk = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" PIN
+TIMEGRP tnm_ipb_clk = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
+        "slaves/slave4/reg_0_0" BEL "slaves/slave4/reg_0_1" BEL
+        "slaves/slave4/reg_0_2" BEL "slaves/slave4/reg_0_3" BEL
+        "slaves/slave4/reg_0_4" BEL "slaves/slave4/reg_0_5" BEL
+        "slaves/slave4/reg_0_6" BEL "slaves/slave4/reg_0_7" BEL
+        "slaves/slave4/reg_0_8" BEL "slaves/slave4/reg_0_9" BEL
+        "slaves/slave4/reg_0_10" BEL "slaves/slave4/reg_0_11" BEL
+        "slaves/slave4/reg_0_12" BEL "slaves/slave4/reg_0_13" BEL
+        "slaves/slave4/reg_0_14" BEL "slaves/slave4/reg_0_15" BEL
+        "slaves/slave4/reg_0_16" BEL "slaves/slave4/reg_0_17" BEL
+        "slaves/slave4/reg_0_18" BEL "slaves/slave4/reg_0_19" BEL
+        "slaves/slave4/reg_0_20" BEL "slaves/slave4/reg_0_21" BEL
+        "slaves/slave4/reg_0_22" BEL "slaves/slave4/reg_0_23" BEL
+        "slaves/slave4/reg_0_24" BEL "slaves/slave4/reg_0_25" BEL
+        "slaves/slave4/reg_0_26" BEL "slaves/slave4/reg_0_27" BEL
+        "slaves/slave4/reg_0_28" BEL "slaves/slave4/reg_0_29" BEL
+        "slaves/slave4/reg_0_30" BEL "slaves/slave4/reg_0_31" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_0" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_1" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_2" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_3" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_4" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_5" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_6" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_7" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_8" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_9" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_10" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_11" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_12" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_13" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_14" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_15" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_16" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_17" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_18" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_19" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_20" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_21" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_22" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_23" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_24" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_25" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_26" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_27" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_28" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_29" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_30" BEL
+        "slaves/slave4/ipbus_out_ipb_rdata_31" BEL "slaves/slave4/ack" BEL
+        "slaves/slave3/reg_0_0" BEL "slaves/slave3/reg_0_1" BEL
+        "slaves/slave3/reg_0_2" BEL "slaves/slave3/reg_0_3" BEL
+        "slaves/slave3/reg_0_4" BEL "slaves/slave3/reg_0_5" BEL
+        "slaves/slave3/reg_0_6" BEL "slaves/slave3/reg_0_7" BEL
+        "slaves/slave3/reg_0_8" BEL "slaves/slave3/reg_0_9" BEL
+        "slaves/slave3/reg_0_10" BEL "slaves/slave3/reg_0_11" BEL
+        "slaves/slave3/reg_0_12" BEL "slaves/slave3/reg_0_13" BEL
+        "slaves/slave3/reg_0_14" BEL "slaves/slave3/reg_0_15" BEL
+        "slaves/slave3/reg_0_16" BEL "slaves/slave3/reg_0_17" BEL
+        "slaves/slave3/reg_0_18" BEL "slaves/slave3/reg_0_19" BEL
+        "slaves/slave3/reg_0_20" BEL "slaves/slave3/reg_0_21" BEL
+        "slaves/slave3/reg_0_22" BEL "slaves/slave3/reg_0_23" BEL
+        "slaves/slave3/reg_0_24" BEL "slaves/slave3/reg_0_25" BEL
+        "slaves/slave3/reg_0_26" BEL "slaves/slave3/reg_0_27" BEL
+        "slaves/slave3/reg_0_28" BEL "slaves/slave3/reg_0_29" BEL
+        "slaves/slave3/reg_0_30" BEL "slaves/slave3/reg_0_31" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_0" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_1" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_2" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_3" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_4" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_5" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_6" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_7" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_8" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_9" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_10" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_11" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_12" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_13" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_14" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_15" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_16" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_17" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_18" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_19" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_20" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_21" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_22" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_23" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_24" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_25" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_26" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_27" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_28" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_29" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_30" BEL
+        "slaves/slave3/ipbus_out_ipb_rdata_31" BEL "slaves/slave3/ack" BEL
+        "slaves/slave2/reg_0_0" BEL "slaves/slave2/reg_0_1" BEL
+        "slaves/slave2/reg_0_2" BEL "slaves/slave2/reg_0_3" BEL
+        "slaves/slave2/reg_0_4" BEL "slaves/slave2/reg_0_5" BEL
+        "slaves/slave2/reg_0_6" BEL "slaves/slave2/reg_0_7" BEL
+        "slaves/slave2/reg_0_8" BEL "slaves/slave2/reg_0_9" BEL
+        "slaves/slave2/reg_0_10" BEL "slaves/slave2/reg_0_11" BEL
+        "slaves/slave2/reg_0_12" BEL "slaves/slave2/reg_0_13" BEL
+        "slaves/slave2/reg_0_14" BEL "slaves/slave2/reg_0_15" BEL
+        "slaves/slave2/reg_0_16" BEL "slaves/slave2/reg_0_17" BEL
+        "slaves/slave2/reg_0_18" BEL "slaves/slave2/reg_0_19" BEL
+        "slaves/slave2/reg_0_20" BEL "slaves/slave2/reg_0_21" BEL
+        "slaves/slave2/reg_0_22" BEL "slaves/slave2/reg_0_23" BEL
+        "slaves/slave2/reg_0_24" BEL "slaves/slave2/reg_0_25" BEL
+        "slaves/slave2/reg_0_26" BEL "slaves/slave2/reg_0_27" BEL
+        "slaves/slave2/reg_0_28" BEL "slaves/slave2/reg_0_29" BEL
+        "slaves/slave2/reg_0_30" BEL "slaves/slave2/reg_0_31" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_0" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_1" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_2" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_3" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_4" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_5" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_6" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_7" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_8" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_9" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_10" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_11" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_12" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_13" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_14" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_15" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_16" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_17" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_18" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_19" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_20" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_21" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_22" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_23" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_24" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_25" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_26" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_27" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_28" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_29" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_30" BEL
+        "slaves/slave2/ipbus_out_ipb_rdata_31" BEL "slaves/slave2/ack" BEL
+        "slaves/slave1/reg_0_0" BEL "slaves/slave1/reg_0_1" BEL
+        "slaves/slave1/reg_0_2" BEL "slaves/slave1/reg_0_3" BEL
+        "slaves/slave1/reg_0_4" BEL "slaves/slave1/reg_0_5" BEL
+        "slaves/slave1/reg_0_6" BEL "slaves/slave1/reg_0_7" BEL
+        "slaves/slave1/reg_0_8" BEL "slaves/slave1/reg_0_9" BEL
+        "slaves/slave1/reg_0_10" BEL "slaves/slave1/reg_0_11" BEL
+        "slaves/slave1/reg_0_12" BEL "slaves/slave1/reg_0_13" BEL
+        "slaves/slave1/reg_0_14" BEL "slaves/slave1/reg_0_15" BEL
+        "slaves/slave1/reg_0_16" BEL "slaves/slave1/reg_0_17" BEL
+        "slaves/slave1/reg_0_18" BEL "slaves/slave1/reg_0_19" BEL
+        "slaves/slave1/reg_0_20" BEL "slaves/slave1/reg_0_21" BEL
+        "slaves/slave1/reg_0_22" BEL "slaves/slave1/reg_0_23" BEL
+        "slaves/slave1/reg_0_24" BEL "slaves/slave1/reg_0_25" BEL
+        "slaves/slave1/reg_0_26" BEL "slaves/slave1/reg_0_27" BEL
+        "slaves/slave1/reg_0_28" BEL "slaves/slave1/reg_0_29" BEL
+        "slaves/slave1/reg_0_30" BEL "slaves/slave1/reg_0_31" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_0" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_1" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_2" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_3" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_4" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_5" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_6" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_7" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_8" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_9" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_10" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_11" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_12" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_13" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_14" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_15" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_16" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_17" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_18" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_19" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_20" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_21" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_22" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_23" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_24" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_25" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_26" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_27" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_28" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_29" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_30" BEL
+        "slaves/slave1/ipbus_out_ipb_rdata_31" BEL "slaves/slave1/ack" BEL
+        "slaves/slave0/reg_0_0" BEL "slaves/slave0/reg_0_1" BEL
+        "slaves/slave0/reg_0_2" BEL "slaves/slave0/reg_0_3" BEL
+        "slaves/slave0/reg_0_4" BEL "slaves/slave0/reg_0_5" BEL
+        "slaves/slave0/reg_0_6" BEL "slaves/slave0/reg_0_7" BEL
+        "slaves/slave0/reg_0_8" BEL "slaves/slave0/reg_0_9" BEL
+        "slaves/slave0/reg_0_10" BEL "slaves/slave0/reg_0_11" BEL
+        "slaves/slave0/reg_0_12" BEL "slaves/slave0/reg_0_13" BEL
+        "slaves/slave0/reg_0_14" BEL "slaves/slave0/reg_0_15" BEL
+        "slaves/slave0/reg_0_16" BEL "slaves/slave0/reg_0_17" BEL
+        "slaves/slave0/reg_0_18" BEL "slaves/slave0/reg_0_19" BEL
+        "slaves/slave0/reg_0_20" BEL "slaves/slave0/reg_0_21" BEL
+        "slaves/slave0/reg_0_22" BEL "slaves/slave0/reg_0_23" BEL
+        "slaves/slave0/reg_0_24" BEL "slaves/slave0/reg_0_25" BEL
+        "slaves/slave0/reg_0_26" BEL "slaves/slave0/reg_0_27" BEL
+        "slaves/slave0/reg_0_28" BEL "slaves/slave0/reg_0_29" BEL
+        "slaves/slave0/reg_0_30" BEL "slaves/slave0/reg_0_31" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_0" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_1" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_2" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_3" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_4" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_5" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_6" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_7" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_8" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_9" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_10" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_11" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_12" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_13" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_14" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_15" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_16" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_17" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_18" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_19" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_20" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_21" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_22" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_23" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_24" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_25" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_26" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_27" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_28" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_29" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_30" BEL
+        "slaves/slave0/ipbus_out_ipb_rdata_31" BEL "slaves/slave0/ack" BEL
+        "slaves/RAM2/ack" PIN "slaves/RAM2/Mram_ram_pins<19>" BEL
+        "slaves/RAM1/ack" PIN "slaves/RAM1/Mram_ram_pins<19>" BEL
+        "slaves/SEUcalibrator/SEU_d1" BEL "slaves/SEUcalibrator/CTRout_0" BEL
+        "slaves/SEUcalibrator/CTRout_1" BEL "slaves/SEUcalibrator/CTRout_2"
+        BEL "slaves/SEUcalibrator/CTRout_3" BEL
+        "slaves/SEUcalibrator/CTRout_4" BEL "slaves/SEUcalibrator/CTRout_5"
+        BEL "slaves/SEUcalibrator/CTRout_6" BEL
+        "slaves/SEUcalibrator/CTRout_7" BEL "slaves/SEUcalibrator/CTRout_8"
+        BEL "slaves/SEUcalibrator/CTRout_9" BEL
+        "slaves/SEUcalibrator/CTRout_10" BEL "slaves/SEUcalibrator/CTRout_11"
+        BEL "slaves/SEUcalibrator/CTRout_12" BEL
+        "slaves/SEUcalibrator/CTRout_13" BEL "slaves/SEUcalibrator/CTRout_14"
+        BEL "slaves/SEUcalibrator/CTRout_15" BEL
+        "slaves/SEUcalibrator/CTRout_16" BEL "slaves/SEUcalibrator/CTRout_17"
+        BEL "slaves/SEUcalibrator/CTRout_18" BEL
+        "slaves/SEUcalibrator/CTRout_19" BEL "slaves/SEUcalibrator/CTRout_20"
+        BEL "slaves/SEUcalibrator/CTRout_21" BEL
+        "slaves/SEUcalibrator/CTRout_22" BEL "slaves/SEUcalibrator/CTRout_23"
+        BEL "slaves/SEUcalibrator/CTRout_24" BEL
+        "slaves/SEUcalibrator/CTRout_25" BEL "slaves/SEUcalibrator/CTRout_26"
+        BEL "slaves/SEUcalibrator/CTRout_27" BEL
+        "slaves/SEUcalibrator/CTRout_28" BEL "slaves/SEUcalibrator/CTRout_29"
+        BEL "slaves/SEUcalibrator/CTRout_30" BEL
+        "slaves/SEUcalibrator/CTRout_31" BEL
+        "slaves/SEUcalibrator/glitch_filt_0" BEL
+        "slaves/SEUcalibrator/glitch_filt_1" BEL
+        "slaves/SEUcalibrator/glitch_filt_2" BEL "slaves/SEUcalibrator/SEU"
+        BEL "slaves/SEUcalibrator/Mshreg_SEU_syn" BEL
+        "slaves/SEUcalibrator/SEU_syn" PIN
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram2_pins<26>" PIN
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram1_pins<26>" PIN
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram3_pins<26>" PIN
@@ -9204,7 +9474,8 @@ TIMEGRP tnm_ipb_clk = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" PIN
         BEL "ipbus/trans/iface/rxf_29_BRB2" BEL
         "ipbus/trans/iface/rxf_30_BRB1" BEL "ipbus/trans/iface/rxf_30_BRB2"
         BEL "ipbus/trans/iface/rxf_31_BRB1" BEL
-        "ipbus/trans/iface/rxf_31_BRB2" BEL "ipbus/trans/cfg/vec_out_81" BEL
+        "ipbus/trans/iface/rxf_31_BRB2" BEL "ipbus/trans/cfg/vec_out_81";
+TIMEGRP GRPIPBCLK = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
         "slaves/slave4/reg_0_0" BEL "slaves/slave4/reg_0_1" BEL
         "slaves/slave4/reg_0_2" BEL "slaves/slave4/reg_0_3" BEL
         "slaves/slave4/reg_0_4" BEL "slaves/slave4/reg_0_5" BEL
@@ -9445,9 +9716,34 @@ TIMEGRP tnm_ipb_clk = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" PIN
         "slaves/slave0/ipbus_out_ipb_rdata_29" BEL
         "slaves/slave0/ipbus_out_ipb_rdata_30" BEL
         "slaves/slave0/ipbus_out_ipb_rdata_31" BEL "slaves/slave0/ack" BEL
-        "slaves/RAM2/ack" PIN "slaves/RAM2/Mram_ram_pins<19>" BEL
-        "slaves/RAM1/ack" PIN "slaves/RAM1/Mram_ram_pins<19>";
-TIMEGRP GRPIPBCLK = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
+        "slaves/RAM2/ack" BEL "slaves/RAM1/ack" BEL
+        "slaves/SEUcalibrator/SEU_d1" BEL "slaves/SEUcalibrator/CTRout_0" BEL
+        "slaves/SEUcalibrator/CTRout_1" BEL "slaves/SEUcalibrator/CTRout_2"
+        BEL "slaves/SEUcalibrator/CTRout_3" BEL
+        "slaves/SEUcalibrator/CTRout_4" BEL "slaves/SEUcalibrator/CTRout_5"
+        BEL "slaves/SEUcalibrator/CTRout_6" BEL
+        "slaves/SEUcalibrator/CTRout_7" BEL "slaves/SEUcalibrator/CTRout_8"
+        BEL "slaves/SEUcalibrator/CTRout_9" BEL
+        "slaves/SEUcalibrator/CTRout_10" BEL "slaves/SEUcalibrator/CTRout_11"
+        BEL "slaves/SEUcalibrator/CTRout_12" BEL
+        "slaves/SEUcalibrator/CTRout_13" BEL "slaves/SEUcalibrator/CTRout_14"
+        BEL "slaves/SEUcalibrator/CTRout_15" BEL
+        "slaves/SEUcalibrator/CTRout_16" BEL "slaves/SEUcalibrator/CTRout_17"
+        BEL "slaves/SEUcalibrator/CTRout_18" BEL
+        "slaves/SEUcalibrator/CTRout_19" BEL "slaves/SEUcalibrator/CTRout_20"
+        BEL "slaves/SEUcalibrator/CTRout_21" BEL
+        "slaves/SEUcalibrator/CTRout_22" BEL "slaves/SEUcalibrator/CTRout_23"
+        BEL "slaves/SEUcalibrator/CTRout_24" BEL
+        "slaves/SEUcalibrator/CTRout_25" BEL "slaves/SEUcalibrator/CTRout_26"
+        BEL "slaves/SEUcalibrator/CTRout_27" BEL
+        "slaves/SEUcalibrator/CTRout_28" BEL "slaves/SEUcalibrator/CTRout_29"
+        BEL "slaves/SEUcalibrator/CTRout_30" BEL
+        "slaves/SEUcalibrator/CTRout_31" BEL
+        "slaves/SEUcalibrator/glitch_filt_0" BEL
+        "slaves/SEUcalibrator/glitch_filt_1" BEL
+        "slaves/SEUcalibrator/glitch_filt_2" BEL "slaves/SEUcalibrator/SEU"
+        BEL "slaves/SEUcalibrator/Mshreg_SEU_syn" BEL
+        "slaves/SEUcalibrator/SEU_syn" BEL
         "ipbus/udp_if/clock_crossing_if/rx_read_buf_buf_0" BEL
         "ipbus/udp_if/clock_crossing_if/rx_read_buf_buf_1" BEL
         "ipbus/udp_if/clock_crossing_if/rx_read_buf_buf_2" BEL
@@ -9789,24 +10085,25 @@ TIMEGRP GRPIPBCLK = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
         BEL "ipbus/trans/iface/rxf_29_BRB2" BEL
         "ipbus/trans/iface/rxf_30_BRB1" BEL "ipbus/trans/iface/rxf_30_BRB2"
         BEL "ipbus/trans/iface/rxf_31_BRB1" BEL
-        "ipbus/trans/iface/rxf_31_BRB2" BEL "ipbus/trans/cfg/vec_out_81" BEL
-        "slaves/slave4/reg_0_0" BEL "slaves/slave4/reg_0_1" BEL
-        "slaves/slave4/reg_0_2" BEL "slaves/slave4/reg_0_3" BEL
-        "slaves/slave4/reg_0_4" BEL "slaves/slave4/reg_0_5" BEL
-        "slaves/slave4/reg_0_6" BEL "slaves/slave4/reg_0_7" BEL
-        "slaves/slave4/reg_0_8" BEL "slaves/slave4/reg_0_9" BEL
-        "slaves/slave4/reg_0_10" BEL "slaves/slave4/reg_0_11" BEL
-        "slaves/slave4/reg_0_12" BEL "slaves/slave4/reg_0_13" BEL
-        "slaves/slave4/reg_0_14" BEL "slaves/slave4/reg_0_15" BEL
-        "slaves/slave4/reg_0_16" BEL "slaves/slave4/reg_0_17" BEL
-        "slaves/slave4/reg_0_18" BEL "slaves/slave4/reg_0_19" BEL
-        "slaves/slave4/reg_0_20" BEL "slaves/slave4/reg_0_21" BEL
-        "slaves/slave4/reg_0_22" BEL "slaves/slave4/reg_0_23" BEL
-        "slaves/slave4/reg_0_24" BEL "slaves/slave4/reg_0_25" BEL
-        "slaves/slave4/reg_0_26" BEL "slaves/slave4/reg_0_27" BEL
-        "slaves/slave4/reg_0_28" BEL "slaves/slave4/reg_0_29" BEL
-        "slaves/slave4/reg_0_30" BEL "slaves/slave4/reg_0_31" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_0" BEL
+        "ipbus/trans/iface/rxf_31_BRB2" BEL "ipbus/trans/cfg/vec_out_81";
+TIMEGRP clocks_clk_ipb_i = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
+        "clocks/bufg_ipb" BEL "slaves/slave4/reg_0_0" BEL
+        "slaves/slave4/reg_0_1" BEL "slaves/slave4/reg_0_2" BEL
+        "slaves/slave4/reg_0_3" BEL "slaves/slave4/reg_0_4" BEL
+        "slaves/slave4/reg_0_5" BEL "slaves/slave4/reg_0_6" BEL
+        "slaves/slave4/reg_0_7" BEL "slaves/slave4/reg_0_8" BEL
+        "slaves/slave4/reg_0_9" BEL "slaves/slave4/reg_0_10" BEL
+        "slaves/slave4/reg_0_11" BEL "slaves/slave4/reg_0_12" BEL
+        "slaves/slave4/reg_0_13" BEL "slaves/slave4/reg_0_14" BEL
+        "slaves/slave4/reg_0_15" BEL "slaves/slave4/reg_0_16" BEL
+        "slaves/slave4/reg_0_17" BEL "slaves/slave4/reg_0_18" BEL
+        "slaves/slave4/reg_0_19" BEL "slaves/slave4/reg_0_20" BEL
+        "slaves/slave4/reg_0_21" BEL "slaves/slave4/reg_0_22" BEL
+        "slaves/slave4/reg_0_23" BEL "slaves/slave4/reg_0_24" BEL
+        "slaves/slave4/reg_0_25" BEL "slaves/slave4/reg_0_26" BEL
+        "slaves/slave4/reg_0_27" BEL "slaves/slave4/reg_0_28" BEL
+        "slaves/slave4/reg_0_29" BEL "slaves/slave4/reg_0_30" BEL
+        "slaves/slave4/reg_0_31" BEL "slaves/slave4/ipbus_out_ipb_rdata_0" BEL
         "slaves/slave4/ipbus_out_ipb_rdata_1" BEL
         "slaves/slave4/ipbus_out_ipb_rdata_2" BEL
         "slaves/slave4/ipbus_out_ipb_rdata_3" BEL
@@ -10030,10 +10327,37 @@ TIMEGRP GRPIPBCLK = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
         "slaves/slave0/ipbus_out_ipb_rdata_29" BEL
         "slaves/slave0/ipbus_out_ipb_rdata_30" BEL
         "slaves/slave0/ipbus_out_ipb_rdata_31" BEL "slaves/slave0/ack" BEL
-        "slaves/RAM2/ack" BEL "slaves/RAM1/ack";
-TIMEGRP clocks_clk_ipb_i = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
-        "clocks/bufg_ipb" PIN "ipbus/udp_if/ipbus_tx_ram/Mram_ram2_pins<26>"
-        PIN "ipbus/udp_if/ipbus_tx_ram/Mram_ram1_pins<26>" PIN
+        "slaves/RAM2/ack" PIN "slaves/RAM2/Mram_ram_pins<19>" BEL
+        "slaves/RAM1/ack" PIN "slaves/RAM1/Mram_ram_pins<19>" BEL
+        "slaves/SEUcalibrator/SEU_d1" BEL "slaves/SEUcalibrator/CTRout_0" BEL
+        "slaves/SEUcalibrator/CTRout_1" BEL "slaves/SEUcalibrator/CTRout_2"
+        BEL "slaves/SEUcalibrator/CTRout_3" BEL
+        "slaves/SEUcalibrator/CTRout_4" BEL "slaves/SEUcalibrator/CTRout_5"
+        BEL "slaves/SEUcalibrator/CTRout_6" BEL
+        "slaves/SEUcalibrator/CTRout_7" BEL "slaves/SEUcalibrator/CTRout_8"
+        BEL "slaves/SEUcalibrator/CTRout_9" BEL
+        "slaves/SEUcalibrator/CTRout_10" BEL "slaves/SEUcalibrator/CTRout_11"
+        BEL "slaves/SEUcalibrator/CTRout_12" BEL
+        "slaves/SEUcalibrator/CTRout_13" BEL "slaves/SEUcalibrator/CTRout_14"
+        BEL "slaves/SEUcalibrator/CTRout_15" BEL
+        "slaves/SEUcalibrator/CTRout_16" BEL "slaves/SEUcalibrator/CTRout_17"
+        BEL "slaves/SEUcalibrator/CTRout_18" BEL
+        "slaves/SEUcalibrator/CTRout_19" BEL "slaves/SEUcalibrator/CTRout_20"
+        BEL "slaves/SEUcalibrator/CTRout_21" BEL
+        "slaves/SEUcalibrator/CTRout_22" BEL "slaves/SEUcalibrator/CTRout_23"
+        BEL "slaves/SEUcalibrator/CTRout_24" BEL
+        "slaves/SEUcalibrator/CTRout_25" BEL "slaves/SEUcalibrator/CTRout_26"
+        BEL "slaves/SEUcalibrator/CTRout_27" BEL
+        "slaves/SEUcalibrator/CTRout_28" BEL "slaves/SEUcalibrator/CTRout_29"
+        BEL "slaves/SEUcalibrator/CTRout_30" BEL
+        "slaves/SEUcalibrator/CTRout_31" BEL
+        "slaves/SEUcalibrator/glitch_filt_0" BEL
+        "slaves/SEUcalibrator/glitch_filt_1" BEL
+        "slaves/SEUcalibrator/glitch_filt_2" BEL "slaves/SEUcalibrator/SEU"
+        BEL "slaves/SEUcalibrator/Mshreg_SEU_syn" BEL
+        "slaves/SEUcalibrator/SEU_syn" PIN
+        "ipbus/udp_if/ipbus_tx_ram/Mram_ram2_pins<26>" PIN
+        "ipbus/udp_if/ipbus_tx_ram/Mram_ram1_pins<26>" PIN
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram3_pins<26>" PIN
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram4_pins<26>" PIN
         "ipbus/udp_if/ipbus_tx_ram/Mram_ram5_pins<26>" PIN
@@ -10405,249 +10729,7 @@ TIMEGRP clocks_clk_ipb_i = BEL "clocks/nuke_i" BEL "clocks/rst_ipb" BEL
         BEL "ipbus/trans/iface/rxf_29_BRB2" BEL
         "ipbus/trans/iface/rxf_30_BRB1" BEL "ipbus/trans/iface/rxf_30_BRB2"
         BEL "ipbus/trans/iface/rxf_31_BRB1" BEL
-        "ipbus/trans/iface/rxf_31_BRB2" BEL "ipbus/trans/cfg/vec_out_81" BEL
-        "slaves/slave4/reg_0_0" BEL "slaves/slave4/reg_0_1" BEL
-        "slaves/slave4/reg_0_2" BEL "slaves/slave4/reg_0_3" BEL
-        "slaves/slave4/reg_0_4" BEL "slaves/slave4/reg_0_5" BEL
-        "slaves/slave4/reg_0_6" BEL "slaves/slave4/reg_0_7" BEL
-        "slaves/slave4/reg_0_8" BEL "slaves/slave4/reg_0_9" BEL
-        "slaves/slave4/reg_0_10" BEL "slaves/slave4/reg_0_11" BEL
-        "slaves/slave4/reg_0_12" BEL "slaves/slave4/reg_0_13" BEL
-        "slaves/slave4/reg_0_14" BEL "slaves/slave4/reg_0_15" BEL
-        "slaves/slave4/reg_0_16" BEL "slaves/slave4/reg_0_17" BEL
-        "slaves/slave4/reg_0_18" BEL "slaves/slave4/reg_0_19" BEL
-        "slaves/slave4/reg_0_20" BEL "slaves/slave4/reg_0_21" BEL
-        "slaves/slave4/reg_0_22" BEL "slaves/slave4/reg_0_23" BEL
-        "slaves/slave4/reg_0_24" BEL "slaves/slave4/reg_0_25" BEL
-        "slaves/slave4/reg_0_26" BEL "slaves/slave4/reg_0_27" BEL
-        "slaves/slave4/reg_0_28" BEL "slaves/slave4/reg_0_29" BEL
-        "slaves/slave4/reg_0_30" BEL "slaves/slave4/reg_0_31" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_0" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_1" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_2" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_3" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_4" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_5" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_6" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_7" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_8" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_9" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_10" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_11" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_12" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_13" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_14" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_15" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_16" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_17" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_18" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_19" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_20" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_21" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_22" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_23" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_24" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_25" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_26" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_27" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_28" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_29" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_30" BEL
-        "slaves/slave4/ipbus_out_ipb_rdata_31" BEL "slaves/slave4/ack" BEL
-        "slaves/slave3/reg_0_0" BEL "slaves/slave3/reg_0_1" BEL
-        "slaves/slave3/reg_0_2" BEL "slaves/slave3/reg_0_3" BEL
-        "slaves/slave3/reg_0_4" BEL "slaves/slave3/reg_0_5" BEL
-        "slaves/slave3/reg_0_6" BEL "slaves/slave3/reg_0_7" BEL
-        "slaves/slave3/reg_0_8" BEL "slaves/slave3/reg_0_9" BEL
-        "slaves/slave3/reg_0_10" BEL "slaves/slave3/reg_0_11" BEL
-        "slaves/slave3/reg_0_12" BEL "slaves/slave3/reg_0_13" BEL
-        "slaves/slave3/reg_0_14" BEL "slaves/slave3/reg_0_15" BEL
-        "slaves/slave3/reg_0_16" BEL "slaves/slave3/reg_0_17" BEL
-        "slaves/slave3/reg_0_18" BEL "slaves/slave3/reg_0_19" BEL
-        "slaves/slave3/reg_0_20" BEL "slaves/slave3/reg_0_21" BEL
-        "slaves/slave3/reg_0_22" BEL "slaves/slave3/reg_0_23" BEL
-        "slaves/slave3/reg_0_24" BEL "slaves/slave3/reg_0_25" BEL
-        "slaves/slave3/reg_0_26" BEL "slaves/slave3/reg_0_27" BEL
-        "slaves/slave3/reg_0_28" BEL "slaves/slave3/reg_0_29" BEL
-        "slaves/slave3/reg_0_30" BEL "slaves/slave3/reg_0_31" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_0" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_1" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_2" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_3" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_4" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_5" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_6" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_7" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_8" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_9" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_10" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_11" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_12" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_13" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_14" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_15" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_16" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_17" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_18" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_19" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_20" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_21" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_22" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_23" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_24" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_25" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_26" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_27" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_28" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_29" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_30" BEL
-        "slaves/slave3/ipbus_out_ipb_rdata_31" BEL "slaves/slave3/ack" BEL
-        "slaves/slave2/reg_0_0" BEL "slaves/slave2/reg_0_1" BEL
-        "slaves/slave2/reg_0_2" BEL "slaves/slave2/reg_0_3" BEL
-        "slaves/slave2/reg_0_4" BEL "slaves/slave2/reg_0_5" BEL
-        "slaves/slave2/reg_0_6" BEL "slaves/slave2/reg_0_7" BEL
-        "slaves/slave2/reg_0_8" BEL "slaves/slave2/reg_0_9" BEL
-        "slaves/slave2/reg_0_10" BEL "slaves/slave2/reg_0_11" BEL
-        "slaves/slave2/reg_0_12" BEL "slaves/slave2/reg_0_13" BEL
-        "slaves/slave2/reg_0_14" BEL "slaves/slave2/reg_0_15" BEL
-        "slaves/slave2/reg_0_16" BEL "slaves/slave2/reg_0_17" BEL
-        "slaves/slave2/reg_0_18" BEL "slaves/slave2/reg_0_19" BEL
-        "slaves/slave2/reg_0_20" BEL "slaves/slave2/reg_0_21" BEL
-        "slaves/slave2/reg_0_22" BEL "slaves/slave2/reg_0_23" BEL
-        "slaves/slave2/reg_0_24" BEL "slaves/slave2/reg_0_25" BEL
-        "slaves/slave2/reg_0_26" BEL "slaves/slave2/reg_0_27" BEL
-        "slaves/slave2/reg_0_28" BEL "slaves/slave2/reg_0_29" BEL
-        "slaves/slave2/reg_0_30" BEL "slaves/slave2/reg_0_31" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_0" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_1" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_2" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_3" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_4" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_5" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_6" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_7" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_8" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_9" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_10" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_11" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_12" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_13" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_14" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_15" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_16" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_17" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_18" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_19" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_20" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_21" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_22" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_23" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_24" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_25" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_26" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_27" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_28" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_29" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_30" BEL
-        "slaves/slave2/ipbus_out_ipb_rdata_31" BEL "slaves/slave2/ack" BEL
-        "slaves/slave1/reg_0_0" BEL "slaves/slave1/reg_0_1" BEL
-        "slaves/slave1/reg_0_2" BEL "slaves/slave1/reg_0_3" BEL
-        "slaves/slave1/reg_0_4" BEL "slaves/slave1/reg_0_5" BEL
-        "slaves/slave1/reg_0_6" BEL "slaves/slave1/reg_0_7" BEL
-        "slaves/slave1/reg_0_8" BEL "slaves/slave1/reg_0_9" BEL
-        "slaves/slave1/reg_0_10" BEL "slaves/slave1/reg_0_11" BEL
-        "slaves/slave1/reg_0_12" BEL "slaves/slave1/reg_0_13" BEL
-        "slaves/slave1/reg_0_14" BEL "slaves/slave1/reg_0_15" BEL
-        "slaves/slave1/reg_0_16" BEL "slaves/slave1/reg_0_17" BEL
-        "slaves/slave1/reg_0_18" BEL "slaves/slave1/reg_0_19" BEL
-        "slaves/slave1/reg_0_20" BEL "slaves/slave1/reg_0_21" BEL
-        "slaves/slave1/reg_0_22" BEL "slaves/slave1/reg_0_23" BEL
-        "slaves/slave1/reg_0_24" BEL "slaves/slave1/reg_0_25" BEL
-        "slaves/slave1/reg_0_26" BEL "slaves/slave1/reg_0_27" BEL
-        "slaves/slave1/reg_0_28" BEL "slaves/slave1/reg_0_29" BEL
-        "slaves/slave1/reg_0_30" BEL "slaves/slave1/reg_0_31" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_0" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_1" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_2" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_3" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_4" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_5" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_6" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_7" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_8" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_9" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_10" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_11" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_12" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_13" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_14" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_15" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_16" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_17" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_18" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_19" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_20" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_21" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_22" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_23" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_24" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_25" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_26" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_27" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_28" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_29" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_30" BEL
-        "slaves/slave1/ipbus_out_ipb_rdata_31" BEL "slaves/slave1/ack" BEL
-        "slaves/slave0/reg_0_0" BEL "slaves/slave0/reg_0_1" BEL
-        "slaves/slave0/reg_0_2" BEL "slaves/slave0/reg_0_3" BEL
-        "slaves/slave0/reg_0_4" BEL "slaves/slave0/reg_0_5" BEL
-        "slaves/slave0/reg_0_6" BEL "slaves/slave0/reg_0_7" BEL
-        "slaves/slave0/reg_0_8" BEL "slaves/slave0/reg_0_9" BEL
-        "slaves/slave0/reg_0_10" BEL "slaves/slave0/reg_0_11" BEL
-        "slaves/slave0/reg_0_12" BEL "slaves/slave0/reg_0_13" BEL
-        "slaves/slave0/reg_0_14" BEL "slaves/slave0/reg_0_15" BEL
-        "slaves/slave0/reg_0_16" BEL "slaves/slave0/reg_0_17" BEL
-        "slaves/slave0/reg_0_18" BEL "slaves/slave0/reg_0_19" BEL
-        "slaves/slave0/reg_0_20" BEL "slaves/slave0/reg_0_21" BEL
-        "slaves/slave0/reg_0_22" BEL "slaves/slave0/reg_0_23" BEL
-        "slaves/slave0/reg_0_24" BEL "slaves/slave0/reg_0_25" BEL
-        "slaves/slave0/reg_0_26" BEL "slaves/slave0/reg_0_27" BEL
-        "slaves/slave0/reg_0_28" BEL "slaves/slave0/reg_0_29" BEL
-        "slaves/slave0/reg_0_30" BEL "slaves/slave0/reg_0_31" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_0" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_1" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_2" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_3" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_4" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_5" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_6" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_7" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_8" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_9" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_10" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_11" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_12" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_13" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_14" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_15" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_16" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_17" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_18" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_19" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_20" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_21" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_22" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_23" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_24" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_25" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_26" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_27" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_28" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_29" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_30" BEL
-        "slaves/slave0/ipbus_out_ipb_rdata_31" BEL "slaves/slave0/ack" BEL
-        "slaves/RAM2/ack" PIN "slaves/RAM2/Mram_ram_pins<19>" BEL
-        "slaves/RAM1/ack" PIN "slaves/RAM1/Mram_ram_pins<19>";
+        "ipbus/trans/iface/rxf_31_BRB2" BEL "ipbus/trans/cfg/vec_out_81";
 TIMEGRP slaves_TDCchannels_PLLgen_clkout5 = BEL "slaves/lockCounter_0" BEL
         "slaves/lockCounter_1" BEL "slaves/lockCounter_2" BEL
         "slaves/lockCounter_3" BEL "slaves/lockCounter_4" BEL
@@ -11318,9 +11400,11 @@ TS_eth_rx_clk_io = PERIOD TIMEGRP "eth_rx_clk_io" TS_GMII_RX_CLK HIGH 50%;
 PIN Gbuffer_hit1_pins<1> = BEL "Gbuffer_hit1" PINNAME O;
 PIN clocks/rst_pins<3> = BEL "clocks/rst" PINNAME Q;
 PIN clocks/nuke_i_pins<2> = BEL "clocks/nuke_i" PINNAME Q;
+PIN SEUcalin_pins<0> = BEL "SEUcalin" PINNAME PAD;
 PIN "Gbuffer_hit1_pins<1>" TIG;
 PIN "clocks/rst_pins<3>" TIG;
 PIN "clocks/nuke_i_pins<2>" TIG;
+PIN "SEUcalin_pins<0>" TIG;
 TIMEGRP "TG_gmii_tx" OFFSET = OUT AFTER COMP "sysclk" REFERENCE_PIN BEL
         "gmii_gtx_clk" "RISING";
 OFFSET = IN 2 ns VALID 3 ns BEFORE COMP "gmii_rx_clk";
